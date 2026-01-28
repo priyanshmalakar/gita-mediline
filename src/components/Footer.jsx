@@ -14,23 +14,24 @@ import {
   Shield,
   ChevronRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "about" },
+    { name: "Services", href: "services" },
+    { name: "Projects", href: "projects" },
+    { name: "Contact", href: "contact" },
   ];
 
   const services = [
-    { name: "MGPS Solutions", href: "#mgps" },
-    { name: "Modular OT", href: "#mot" },
-    { name: "Central Gas Supply", href: "#central-supply" },
-    { name: "Medical Equipment", href: "#equipment" },
+    { name: "MGPS Solutions", href: "services" },
+    { name: "Modular OT", href: "services" },
+    { name: "Central Gas Supply", href: "services" },
+    { name: "Medical Equipment", href: "services" },
   ];
 
   const socialLinks = [
@@ -96,7 +97,7 @@ const Footer = () => {
                   SERVICES
                 </p>
                 <p className="text-blue-400 italic text-sm mt-1">
-                 Life Support Systems...
+                  Life Support Systems...
                 </p>
               </div>
 
@@ -147,13 +148,13 @@ const Footer = () => {
               <ul className="space-y-2">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <a
+                    <Link
                       href={link.href}
                       className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition-colors text-sm group"
                     >
                       <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       <span>{link.name}</span>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -167,13 +168,13 @@ const Footer = () => {
               <ul className="space-y-2">
                 {services.map((service) => (
                   <li key={service.name}>
-                    <a
+                    <Link
                       href={service.href}
                       className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition-colors text-sm group"
                     >
                       <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       <span>{service.name}</span>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -218,15 +219,23 @@ const Footer = () => {
                   <div className="flex items-start gap-2">
                     <MapPin className="w-4 h-4 flex-shrink-0 text-blue-400 mt-0.5" />
                     <div>
-                      <p className="text-sm font-bold text-white  tracking-wide">Mandleshwar</p>
-                      <p className="text-sm text-gray-300">Khargone, Madhya Pradesh</p>
+                      <p className="text-sm font-bold text-white  tracking-wide">
+                        Mandleshwar
+                      </p>
+                      <p className="text-sm text-gray-300">
+                        Khargone, Madhya Pradesh
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
                     <MapPin className="w-4 h-4 flex-shrink-0 text-green-400 mt-0.5" />
-                    <div >
-                      <p className="text-sm font-bold text-white  tracking-wide">Indore</p>
-                      <p className="text-sm text-gray-300">Bangali Square, Madhya Pradesh</p>
+                    <div>
+                      <p className="text-sm font-bold text-white  tracking-wide">
+                        Indore
+                      </p>
+                      <p className="text-sm text-gray-300">
+                        Bangali Square, Madhya Pradesh
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -249,7 +258,10 @@ const Footer = () => {
                 Privacy
               </a>
               <span>|</span>
-              <a href="#terms" className="hover:text-blue-400 transition-colors">
+              <a
+                href="#terms"
+                className="hover:text-blue-400 transition-colors"
+              >
                 Terms
               </a>
               <span>|</span>

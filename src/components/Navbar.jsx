@@ -105,6 +105,7 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-16 lg:h-20">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
+              <Link href="/" className="flex items-center gap-2">
               <div className="flex flex-col">
                 <span className="text-xl lg:text-2xl font-bold gradient-text">
                   GITA MEDILINE
@@ -113,6 +114,7 @@ export default function Navbar() {
                   SERVICES
                 </span>
               </div>
+              </Link>
             </div>
 
             {/* Desktop Navigation */}

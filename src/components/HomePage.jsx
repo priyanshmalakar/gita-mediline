@@ -20,6 +20,7 @@ import {
 import modularOTImage from "../assets/banner/banner6.jpeg";
 import mgpsInstallation from "../assets/banner/banner4.jpg";
 import installtionPipe from "../assets/banner/banner.jpeg";
+import Link from "next/link";
 
 const HomePage = () => {
   const coreServices = [
@@ -114,7 +115,6 @@ const HomePage = () => {
 
   return (
     <div className="bg-white">
-     
       {/* About Section - Mobile Optimized Version */}
       <section className="section bg-white relative overflow-hidden">
         {/* Decorative Background Elements */}
@@ -210,13 +210,13 @@ const HomePage = () => {
 
               {/* CTA Button - Mobile Centered */}
               <div className="pt-2 md:pt-1 text-center lg:text-left">
-                <a
-                  href="#projects"
+                <Link
+                  href="/projects"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-800 to-cyan-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm md:text-base"
                 >
                   View Our Projects
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -301,13 +301,13 @@ const HomePage = () => {
 
               {/* View More Projects Link - Mobile Optimized */}
               <div className="mt-4 md:mt-6 text-center">
-                <a
-                  href="#projects"
+                <Link
+                  href="projects"
                   className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-xs md:text-sm group"
                 >
                   <span>View All 50+ Completed Projects</span>
                   <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -538,13 +538,13 @@ const HomePage = () => {
 
           {/* Bottom CTA */}
           <div className="mt-16 text-center">
-            <a
-              href="#contact"
+            <Link
+              href="contact"
               className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
             >
               Get Started with GMS
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -575,9 +575,9 @@ const HomePage = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <a href="#contact" className="btn-hero-solid-secondary">
+                <Link href="contact" className="btn-hero-solid-secondary">
                   Contact Us Today
-                </a>
+                </Link>
                 <a href="tel:+917067534498" id="btn-hero-call">
                   Call Now
                 </a>

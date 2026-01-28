@@ -17,6 +17,7 @@ import {
   Layout,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const ServicesPage = () => {
   const mgpsScope = [
@@ -400,14 +401,14 @@ const ServicesPage = () => {
               Get expert consultation for your MGPS and Modular OT requirements
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <a href="#contact" className="btn-hero-solid-secondary">
+              <Link href="/contact" className="btn-hero-solid-secondary">
                 <CheckCircle className="w-5 h-5" />
                 Request Consultation
-              </a>
-              <a href="projects" className="btn-outline">
+              </Link>
+              <Link href="/projects" className="btn-outline">
                 <ArrowRight className="w-5 h-5" />
                 View Our Projects
-              </a>
+              </Link>
             </div>
           </div>
         </div>

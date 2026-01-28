@@ -17,6 +17,7 @@ import banner2 from "../assets/banner/banner2.jpeg";
 import banner3 from "../assets/banner/banner3.jpeg";
 import banner4 from "../assets/banner/banner4.jpg";
 import banner5 from "../assets/banner/banner5.jpeg";
+import Link from "next/link";
 
 const Hero = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -134,14 +135,14 @@ const Hero = () => {
 
               {/* CTA Buttons - Side by side on mobile, improved styling */}
               <div className="flex flex-row gap-3 pt-2">
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="flex-1 sm:flex-none btn-hero-primary group"
                 >
                   <Mail className="w-4 h-4 md:w-5 md:h-5" />
                   <span className="hidden xs:inline">Contact Us</span>
                   <span className="xs:hidden">Contact</span>
-                </a>
+                </Link>
                 <a
                   href="tel:+917067534498"
                   className="flex-1 sm:flex-none  group"

@@ -16,6 +16,7 @@ import {
   ArrowRight,
   Filter,
 } from "lucide-react";
+import Link from "next/link";
 
 const ProjectsPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -503,10 +504,10 @@ const ProjectsPage = () => {
               Madhya Pradesh
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <a href="#contact" className="btn-hero-solid-secondary">
+              <Link href="contact" className="btn-hero-solid-secondary">
                 <Building2 className="w-5 h-5" />
                 Start Your Project
-              </a>
+              </Link>
               <a href="tel:+917067534498" className="btn-outline">
                 <Phone className="w-5 h-5" />
                 Call: +91 70675 34498

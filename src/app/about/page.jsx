@@ -311,13 +311,13 @@ const AboutPage = () => {
               who prioritize safety, compliance, and reliability
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="btn-hero-solid-secondary"
               >
                 <Building2 className="w-5 h-5" />
                 Contact Us
-              </a>
+              </Link>
               <Link
                 href="/projects"
                 className="btn-outline"
