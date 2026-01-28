@@ -68,7 +68,7 @@ const Hero = () => {
           </div>
 
           {/* Enhanced Gradient Overlay - Better readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/85 via-blue-900/75 to-gray-900/90 md:bg-gradient-to-r md:from-blue-900/80 md:via-blue-900/60 md:to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/85 via-gray-900/75 to-gray-900/90 md:bg-gradient-to-r md:from-gray-900 md:via-gray-900/75 md:to-transparent"></div>
         </div>
 
         {/* Carousel Indicators */}

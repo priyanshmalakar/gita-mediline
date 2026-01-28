@@ -149,11 +149,11 @@
 
   /* Gradients */
   .gradient-primary {
-    @apply bg-gradient-to-r from-blue-600 to-cyan-500;
+    @apply bg-gradient-to-r from-blue-800 to-cyan-600;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-800 to-cyan-600 bg-clip-text text-transparent;
   }
 
   .gradient-overlay {

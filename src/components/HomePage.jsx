@@ -28,7 +28,7 @@ const HomePage = () => {
       title: "Medical Gas Pipeline Systems (MGPS)",
       description:
         "Complete MGPS solutions from design to commissioning, ensuring safe and reliable medical gas delivery.",
-      gradient: "from-blue-500 to-cyan-500",
+      gradient: "from-blue-500 to-cyan-600",
     },
     {
       icon: Building2,
@@ -114,31 +114,33 @@ const HomePage = () => {
 
   return (
     <div className="bg-white">
-      {/* About Section - Enhanced with Real Photos */}
+     
+      {/* About Section - Mobile Optimized Version */}
       <section className="section bg-white relative overflow-hidden">
         {/* Decorative Background Elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50"></div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-cyan-50 rounded-full translate-y-1/2 -translate-x-1/2 opacity-50"></div>
+        <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-blue-50 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 md:w-72 md:h-72 bg-cyan-50 rounded-full translate-y-1/2 -translate-x-1/2 opacity-50"></div>
 
         <div className="container-custom relative z-10">
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold">
-              <Building2 className="w-4 h-4" />
+          {/* Section Header - Optimized for Mobile */}
+          <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 space-y-3 md:space-y-4 px-2">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold">
+              <Building2 className="w-3 h-3 md:w-4 md:h-4" />
               About Gita Mediline Services
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
               Medical Gas & Modular OT
-              <span className="block gradient-text mt-2">
+              <span className="block gradient-text mt-1 md:mt-2">
                 Infrastructure Specialists
               </span>
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
             {/* Left Content - Text & Stats */}
-            <div className="px-1 space-y-6 animate-slide-up order-2 lg:order-1">
-              <div className="space-y-4 text-gray-600 text-base leading-relaxed">
+            <div className="space-y-4 md:space-y-6 animate-slide-up order-2 lg:order-1 px-2">
+              {/* Company Description */}
+              <div className="space-y-3 md:space-y-4 text-gray-600 text-sm md:text-base leading-relaxed">
                 <p>
                   <strong className="text-gray-900">
                     Gita Mediline Services (GMS)
@@ -157,107 +159,113 @@ const HomePage = () => {
 
                 <p>
                   With <strong className="text-gray-900">5+ years</strong> of
-                  focused experience.
+                  focused experience in healthcare infrastructure.
                 </p>
 
-                <p className="text-blue-700 font-medium italic text-lg">
-                  "Life Support Systems…" – Our commitment to healthcare excellence
+                <p className="text-blue-700 font-medium italic text-sm md:text-lg pt-2">
+                  "Life Support Systems…" – Our commitment to healthcare
+                  excellence
                 </p>
               </div>
 
-              {/* Certifications Badges */}
-              <div className="flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-lg border border-blue-200">
-                  <Shield className="w-4 h-4" />
-                  <span className="text-sm font-semibold">ISO 9001:2015</span>
+              {/* Certifications Badges - Mobile Optimized */}
+              <div className="flex flex-wrap gap-2 md:gap-3">
+                <div className="flex items-center gap-1.5 md:gap-2 bg-blue-50 text-blue-700 px-3 py-1.5 md:px-4 md:py-2 rounded-lg border border-blue-200 text-xs md:text-sm">
+                  <Shield className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+                  <span className="font-semibold whitespace-nowrap">
+                    ISO 9001:2015
+                  </span>
                 </div>
-                <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-lg border border-green-200">
-                  <Award className="w-4 h-4" />
-                  <span className="text-sm font-semibold">CE Certified</span>
+                <div className="flex items-center gap-1.5 md:gap-2 bg-green-50 text-green-700 px-3 py-1.5 md:px-4 md:py-2 rounded-lg border border-green-200 text-xs md:text-sm">
+                  <Award className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+                  <span className="font-semibold whitespace-nowrap">
+                    CE Certified
+                  </span>
                 </div>
-                <div className="flex items-center gap-2 bg-purple-50 text-purple-700 px-4 py-2 rounded-lg border border-purple-200">
-                  <CheckCircle className="w-4 h-4" />
-                  <span className="text-sm font-semibold">HTM 02-01</span>
+                <div className="flex items-center gap-1.5 md:gap-2 bg-purple-50 text-purple-700 px-3 py-1.5 md:px-4 md:py-2 rounded-lg border border-purple-200 text-xs md:text-sm">
+                  <CheckCircle className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+                  <span className="font-semibold whitespace-nowrap">
+                    HTM 02-01
+                  </span>
                 </div>
               </div>
 
-              {/* Stats Grid - Compact */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+              {/* Stats Grid - Mobile Optimized with Better Spacing */}
+              <div className="grid grid-cols-2 gap-3 md:gap-4 pt-2 md:pt-4">
                 {stats.map((stat, index) => (
                   <div
                     key={index}
-                    className="text-center p-4 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl border border-gray-200 hover:shadow-lg transition-all duration-300"
+                    className="text-center p-3 md:p-4 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl border border-gray-200 hover:shadow-lg transition-all duration-300"
                   >
-                    <stat.icon className="w-6 h-6 text-blue-600 mx-auto mb-2" />
-                    <div className="text-2xl font-bold gradient-text">
+                    <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-blue-600 mx-auto mb-1 md:mb-2" />
+                    <div className="text-xl md:text-2xl font-bold gradient-text">
                       {stat.number}
                     </div>
-                    <div className="text-xs text-gray-600 font-medium mt-1">
+                    <div className="text-xs text-gray-600 font-medium mt-0.5 md:mt-1">
                       {stat.label}
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* CTA Button */}
-           <div className="pt-1 text-center lg:text-left">
+              {/* CTA Button - Mobile Centered */}
+              <div className="pt-2 md:pt-1 text-center lg:text-left">
                 <a
                   href="#projects"
-                  className="inline-flex items-center  gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-800 to-cyan-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm md:text-base"
                 >
                   View Our Projects
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                 </a>
               </div>
             </div>
 
-            {/* Right Content - Photo Gallery Grid with Real Images */}
-            <div className="order-1 lg:order-2 animate-fade-in">
-              <div className="grid grid-cols-2 gap-4">
-                {/* Large Featured Image - Top Left - REPLACE WITH YOUR IMAGE */}
-                <div className="col-span-2 relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                  <div className="h-60 md:h-75 bg-gray-200 relative overflow-hidden">
-                    {/* Replace 'projectImage1' with your imported image */}
+            {/* Right Content - Photo Gallery Grid - Mobile Optimized */}
+            <div className="order-1 lg:order-2 animate-fade-in px-2 md:px-0">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
+                {/* Large Featured Image - Responsive Height */}
+                <div className="col-span-2 relative group overflow-hidden rounded-xl md:rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer">
+                  <div className="h-48 sm:h-56 md:h-64 lg:h-72 bg-gray-200 relative overflow-hidden">
                     <img
                       src={mgpsInstallation.src}
                       alt="MGPS Installation - Gita Mediline Services"
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                      <div className="p-6 text-white w-full">
-                        <p className="font-bold text-lg text-gray-300">
+                    {/* Overlay on hover - Hidden on very small screens */}
+                    <div className="hidden sm:flex absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-end">
+                      <div className="p-4 md:p-6 text-white w-full">
+                        <p className="font-bold text-base md:text-lg text-gray-300">
                           Medical Gas Pipeline System
                         </p>
-                        <p className="text-sm text-blue-200 mt-1">
+                        <p className="text-xs md:text-sm text-blue-200 mt-1">
                           Professional MGPS Installation
                         </p>
-                        <div className="flex items-center gap-2 mt-3 text-xs">
+                        <div className="hidden md:flex items-center gap-2 mt-3 text-xs">
                           <CheckCircle className="w-4 h-4" />
                           <span>HTM 02-01 Compliant</span>
                         </div>
                       </div>
                     </div>
                   </div>
-                  {/* Featured badge */}
-                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-bold text-blue-600 shadow-lg flex items-center gap-1">
+                  {/* Featured badge - Smaller on mobile */}
+                  <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-white/95 backdrop-blur-sm px-2 py-1 md:px-3 md:py-1.5 rounded-full text-xs font-bold text-blue-600 shadow-lg flex items-center gap-1">
                     <Award className="w-3 h-3" />
-                    Featured Project
+                    <span className="hidden sm:inline">Featured</span>
                   </div>
                 </div>
 
-                {/* Small Image 1 - Bottom Left - REPLACE WITH YOUR IMAGE */}
-                <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 cursor-pointer">
-                  <div className="aspect-[16/9] bg-gray-200 relative overflow-hidden">
+                {/* Small Image 1 - Responsive */}
+                <div className="relative group overflow-hidden rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 cursor-pointer">
+                  <div className="aspect-[4/3] md:aspect-[16/9] bg-gray-200 relative overflow-hidden">
                     <img
                       src={modularOTImage.src}
                       alt="Modular Operation Theatre - Gita Mediline Services"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                      <div className="p-4 text-white">
-                        <p className="text-sm font-bold text-gray-300">
+                    {/* Simplified overlay for mobile */}
+                    <div className="hidden sm:flex absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-end">
+                      <div className="p-3 md:p-4 text-white">
+                        <p className="text-xs md:text-sm font-bold text-gray-300">
                           Modular OT
                         </p>
                         <p className="text-xs text-green-200">
@@ -268,17 +276,18 @@ const HomePage = () => {
                   </div>
                 </div>
 
-                {/* Small Image 2 - Bottom Right - REPLACE WITH YOUR IMAGE */}
-                <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 cursor-pointer">
-                  <div className="aspect-[16/9] bg-gray-200 relative overflow-hidden">
+                {/* Small Image 2 - Responsive */}
+                <div className="relative group overflow-hidden rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 cursor-pointer">
+                  <div className="aspect-[4/3] md:aspect-[16/9] bg-gray-200 relative overflow-hidden">
                     <img
                       src={installtionPipe.src}
                       alt="Medical Equipment Installation - Gita Mediline Services"
-                      className="w-full h-full object-fill group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                      <div className="p-4 text-white">
-                        <p className="text-sm font-bold text-gray-300">
+                    {/* Simplified overlay for mobile */}
+                    <div className="hidden sm:flex absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-end">
+                      <div className="p-3 md:p-4 text-white">
+                        <p className="text-xs md:text-sm font-bold text-gray-300">
                           Equipment Setup
                         </p>
                         <p className="text-xs text-purple-200">
@@ -290,23 +299,22 @@ const HomePage = () => {
                 </div>
               </div>
 
-              {/* View More Projects Link */}
-              <div className="mt-6 text-center">
+              {/* View More Projects Link - Mobile Optimized */}
+              <div className="mt-4 md:mt-6 text-center">
                 <a
                   href="#projects"
-                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm group"
+                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-xs md:text-sm group"
                 >
                   <span>View All 50+ Completed Projects</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>
           </div>
         </div>
       </section>
-<hr className="border-blue-400" />
-
-{/* Core Services Section - Premium Design */}
+      <hr className="border-gray-300" />
+      {/* Core Services Section - Premium Design */}
       <section className="section bg-white">
         <div className="container-custom">
           {/* Section Header */}
@@ -329,7 +337,7 @@ const HomePage = () => {
             {/* Service 1 - MGPS */}
             <div className="group bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 md:p-8 border border-blue-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="flex items-start justify-between mb-4">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shadow-lg">
                   <Activity className="w-7 h-7 text-white" />
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-blue-600">
@@ -340,7 +348,8 @@ const HomePage = () => {
                 Medical Gas Pipeline Systems
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                Complete MGPS design, installation, testing & commissioning with HTM 02-01 compliance for safe medical gas delivery.
+                Complete MGPS design, installation, testing & commissioning with
+                HTM 02-01 compliance for safe medical gas delivery.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="text-xs bg-white px-3 py-1 rounded-full text-gray-700 font-medium">
@@ -372,7 +381,8 @@ const HomePage = () => {
                 Modular Operation Theatre
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                Infection-controlled modular OT with integrated MGPS, HEPA filtration, and laminar airflow systems.
+                Infection-controlled modular OT with integrated MGPS, HEPA
+                filtration, and laminar airflow systems.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="text-xs bg-white px-3 py-1 rounded-full text-gray-700 font-medium">
@@ -401,7 +411,8 @@ const HomePage = () => {
                 Turnkey Healthcare Infrastructure
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                End-to-end healthcare infrastructure solutions for private and government hospitals across Central India.
+                End-to-end healthcare infrastructure solutions for private and
+                government hospitals across Central India.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="text-xs bg-white px-3 py-1 rounded-full text-gray-700 font-medium">
@@ -430,7 +441,8 @@ const HomePage = () => {
                 Medical Equipment & Installation
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                Supply and professional installation of medical-grade equipment with full compliance and documentation.
+                Supply and professional installation of medical-grade equipment
+                with full compliance and documentation.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="text-xs bg-white px-3 py-1 rounded-full text-gray-700 font-medium">
@@ -447,7 +459,7 @@ const HomePage = () => {
           </div>
 
           {/* Bottom Stats Bar */}
-          <div className="mt-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-6 md:p-8">
+          <div className="mt-12 bg-gradient-to-r from-blue-800 to-cyan-600 rounded-2xl p-6 md:p-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
               <div>
                 <div className="text-3xl md:text-4xl font-bold mb-1">5+</div>
@@ -469,9 +481,8 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
       {/* Why Choose Us Section */}
-      <section className="section bg-gradient-to-br from-blue-600 to-cyan-600 text-white relative overflow-hidden">
+      <section className="section bg-gradient-to-br from-blue-800 to-cyan-700 text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -537,11 +548,10 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
       {/* Trusted Partner CTA Section */}
       <section className="section bg-gray-50">
         <div className="container-custom">
-          <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-3xl p-8 md:p-12 lg:p-16 text-center text-white shadow-2xl relative overflow-hidden">
+          <div className="bg-gradient-to-br from-blue-800 to-cyan-600 rounded-3xl p-8 md:p-12 lg:p-16 text-center text-white shadow-2xl relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
