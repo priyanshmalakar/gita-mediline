@@ -396,7 +396,7 @@ const ProjectsPage = () => {
                     {/* Replace with actual logo */}
                     <div className="text-center">
                       <Building2 className="w-12 h-12 text-blue-600 mx-auto mb-2" />
-                      <p className="text-xs text-gray-500">Client Logo</p>
+                      <p className="text-xs text-gray-500">Photos</p>
                     </div>
                   </div>
                 </div>
