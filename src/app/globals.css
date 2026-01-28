@@ -55,7 +55,6 @@
 
 /* Base Styles */
 @layer base {
-
   body {
     @apply bg-white text-gray-900 antialiased;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -91,17 +90,35 @@
 
 /* Custom Component Classes */
 @layer components {
-  /* Buttons */
+  /* Standard Buttons */
   .btn-primary {
-    @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-200;
+    @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-white text-blue-600 font-semibold rounded-full border-2 border-blue-600 hover:bg-blue-50 transition-all duration-200;
+    @apply px-6 py-3 bg-white text-blue-600 font-semibold rounded-full border-2 border-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2;
   }
 
   .btn-outline {
-    @apply px-6 py-3 bg-transparent text-white font-semibold rounded-full border-2 border-white hover:bg-white hover:text-blue-600 transition-all duration-200;
+    @apply px-6 py-3 bg-transparent text-white font-semibold rounded-full border-2 border-white hover:bg-white hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-2;
+  }
+
+  /* Hero Section Buttons - Glass Morphism Design */
+  .btn-hero-primary {
+    @apply px-4 py-3 md:px-6 md:py-3.5 bg-white/20 backdrop-blur-md text-white font-semibold rounded-full border-2 border-white/40 hover:bg-white hover:text-blue-600 hover:border-white transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 text-sm md:text-base;
+  }
+
+  #btn-hero-call {
+    @apply px-4 py-3 md:px-6 md:py-3.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 text-sm md:text-base;
+  }
+
+  /* Alternative Hero Buttons - Solid Variants */
+  .btn-hero-solid-primary {
+    @apply px-4 py-3 md:px-6 md:py-3.5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-full hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 text-sm md:text-base;
+  }
+
+  .btn-hero-solid-secondary {
+    @apply px-4 py-3 md:px-6 md:py-3.5 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 text-sm md:text-base;
   }
 
   /* Cards */
@@ -113,9 +130,13 @@
     @apply bg-white rounded-xl p-8 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300;
   }
 
+  .card-glass {
+    @apply bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg hover:shadow-xl hover:bg-white/15 transition-all duration-300;
+  }
+
   /* Sections */
   .section {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-10 md:py-10 lg:py-10;
   }
 
   .section-padding {
@@ -123,7 +144,7 @@
   }
 
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   /* Gradients */
@@ -133,6 +154,10 @@
 
   .gradient-text {
     @apply bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-overlay {
+    @apply bg-gradient-to-r from-blue-900/80 via-blue-900/60 to-transparent;
   }
 
   /* Overlays */
@@ -146,7 +171,7 @@
 
   /* Animations */
   .animate-fade-in {
-    animation: fadeIn 0.5s ease-in;
+    animation: fadeIn 0.8s ease-in;
   }
 
   .animate-slide-up {
@@ -157,6 +182,35 @@
     animation: slideRight 0.6s ease-out;
   }
 
+  .animate-pulse-slow {
+    animation: pulseSlow 3s ease-in-out infinite;
+  }
+
+  .animate-dash {
+    animation: dash 2s linear infinite;
+  }
+
+  /* Animation Delays */
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  .animation-delay-700 {
+    animation-delay: 0.7s;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+
+  .animation-delay-1200 {
+    animation-delay: 1.2s;
+  }
+
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
+
   /* Navigation */
   .nav-link {
     @apply px-4 py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 hover:after:w-full after:transition-all after:duration-300;
@@ -164,6 +218,23 @@
 
   .nav-link-active {
     @apply text-blue-600 after:w-full;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold;
+  }
+
+  .badge-primary {
+    @apply bg-blue-100 text-blue-700;
+  }
+
+  .badge-success {
+    @apply bg-green-100 text-green-700;
+  }
+
+  .badge-glass {
+    @apply bg-white/20 backdrop-blur-md text-white border border-white/30;
   }
 }
 
@@ -180,6 +251,28 @@
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
+  }
+
+  /* Glass Morphism Utilities */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-strong {
+    @apply bg-white/20 backdrop-blur-lg border border-white/30;
+  }
+
+  /* Text Shadow for Readability */
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -225,6 +318,24 @@
   }
 }
 
+@keyframes pulseSlow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -400;
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -242,4 +353,30 @@
   h3 {
     @apply text-xl;
   }
+}
+
+/* Extra Small Screens - xs breakpoint (below 475px) */
+@media (max-width: 475px) {
+  .container-custom {
+    @apply px-3;
+  }
+}
+
+/* Focus Visible for Accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-600;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  @apply bg-blue-600 text-white;
+}
+
+::-moz-selection {
+  @apply bg-blue-600 text-white;
 }
