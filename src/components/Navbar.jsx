@@ -32,12 +32,13 @@ export default function Navbar() {
     { name: "Projects", href: "projects" },
     { name: "Certifications", href: "certifications" },
     { name: "Contact", href: "contact" },
+    { name: "FAQ", href: "faq" },
   ];
 
   return (
     <>
       {/* Top Contact Bar - Desktop */}
-      <div className="hidden lg:block bg-gradient-to-r from-blue-900 to-blue-900 text-white py-2.5">
+      <div className="hidden lg:block bg-gradient-to-r from-blue-900 to-blue-900 text-white py-1.5">
         <div className="container-custom">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center gap-6">
