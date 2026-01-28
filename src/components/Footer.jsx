@@ -86,17 +86,17 @@ const Footer = () => {
 
       <div className="container-custom relative z-10">
         {/* Main Footer Content */}
-        <div className="py-8 md:py-12">
+        <div className="py-6 md:py-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div>
                 <h3 className="text-xl font-bold">GITA MEDILINE</h3>
                 <p className="text-xs text-gray-400 font-medium tracking-wider">
                   SERVICES
                 </p>
                 <p className="text-blue-400 italic text-sm mt-1">
-                  Gases for Life…
+                 Life Support Systems...
                 </p>
               </div>
 
