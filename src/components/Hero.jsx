@@ -72,7 +72,7 @@ const Hero = () => {
         </div>
 
         {/* Carousel Indicators */}
-        <div className="absolute bottom-8 md:bottom-16 left-1/2 transform -translate-x-1/2 z-30 flex gap-2">
+        <div className="absolute bottom-2.5 md:bottom-16  left-1/2 transform -translate-x-1/2 z-30 flex gap-2">
           {images.map((_, index) => (
             <button
               key={index}
