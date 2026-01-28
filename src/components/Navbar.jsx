@@ -151,7 +151,7 @@ export default function Navbar() {
         >
           <div className="px-4 pt-2 pb-6 space-y-1 bg-white shadow-lg">
             {/* Mobile Contact Info Card */}
-            <div className="mb-4 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 shadow-sm">
+            {/* <div className="mb-4 p-4 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 shadow-sm">
               <h3 className="text-sm font-bold text-blue-900 mb-3 flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 Contact Gita Mediline
@@ -188,7 +188,7 @@ export default function Navbar() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Navigation Links */}
             {navLinks.map((link) => (
@@ -236,7 +236,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               <Phone className="w-4 h-4" />
-              Call Now - Emergency Contact
+              Call Now
             </a>
           </div>
         </div>
