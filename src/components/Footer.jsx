@@ -23,15 +23,15 @@ const Footer = () => {
     { name: "Home", href: "/" },
     { name: "About Us", href: "about" },
     { name: "Services", href: "services" },
-    { name: "Projects", href: "projects" },
+    { name: "Clients", href: "clients" },
     { name: "Contact", href: "contact" },
   ];
 
   const services = [
     { name: "MGPS Solutions", href: "services" },
     { name: "Modular OT", href: "services" },
-    { name: "Central Gas Supply", href: "services" },
-    { name: "Medical Equipment", href: "services" },
+    { name: "Central Gas Supply", href: "services" }
+    // { name: "Medical Equipment", href: "services" },
   ];
 
   const socialLinks = [

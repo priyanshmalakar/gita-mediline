@@ -18,7 +18,7 @@ import {
   Activity,
 } from "lucide-react";
 import modularOTImage from "../assets/banner/banner6.jpeg";
-import mgpsInstallation from "../assets/banner/banner4.jpg";
+import mgpsInstallation from "../assets/banner/banner2.jpeg";
 import installtionPipe from "../assets/banner/banner.jpeg";
 import Link from "next/link";
 
@@ -191,7 +191,7 @@ const HomePage = () => {
               </div>
 
               {/* Stats Grid - Mobile Optimized with Better Spacing */}
-              <div className="grid grid-cols-2 gap-3 md:gap-4 pt-2 md:pt-4">
+              {/* <div className="grid grid-cols-2 gap-3 md:gap-4 pt-2 md:pt-4">
                 {stats.map((stat, index) => (
                   <div
                     key={index}
@@ -206,15 +206,15 @@ const HomePage = () => {
                     </div>
                   </div>
                 ))}
-              </div>
+              </div> */}
 
               {/* CTA Button - Mobile Centered */}
               <div className="pt-2 md:pt-1 text-center lg:text-left">
                 <Link
-                  href="/projects"
+                  href="/clients"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-800 to-cyan-600 text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm md:text-base"
                 >
-                  View Our Projects
+                  View Our Clients
                   <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                 </Link>
               </div>
@@ -299,16 +299,16 @@ const HomePage = () => {
                 </div>
               </div>
 
-              {/* View More Projects Link - Mobile Optimized */}
-              <div className="mt-4 md:mt-6 text-center">
+              {/* View More Clients Link - Mobile Optimized */}
+              {/* <div className="mt-4 md:mt-6 text-center">
                 <Link
-                  href="projects"
+                  href="clients"
                   className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-xs md:text-sm group"
                 >
-                  <span>View All 50+ Completed Projects</span>
+                  <span>View All 50+ Completed Clients</span>
                   <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -333,7 +333,7 @@ const HomePage = () => {
           </div>
 
           {/* Services Grid - 2 Column Modern Cards */}
-          <div className="grid md:grid-cols-2 gap-6  mx-auto">
+          <div className="grid md:grid-cols-3 gap-6  mx-auto">
             {/* Service 1 - MGPS */}
             <div className="group bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 md:p-8 border border-blue-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="flex items-start justify-between mb-4">
@@ -428,7 +428,7 @@ const HomePage = () => {
             </div>
 
             {/* Service 4 - Equipment Supply */}
-            <div className="group bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 md:p-8 border border-orange-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            {/* <div className="group bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 md:p-8 border border-orange-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
               <div className="flex items-start justify-between mb-4">
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center shadow-lg">
                   <Wrench className="w-7 h-7 text-white" />
@@ -455,7 +455,7 @@ const HomePage = () => {
                   Manifolds
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Bottom Stats Bar */}
@@ -467,7 +467,7 @@ const HomePage = () => {
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-bold mb-1">50+</div>
-                <div className="text-sm text-blue-100">Projects Done</div>
+                <div className="text-sm text-blue-100">Clients Done</div>
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-bold mb-1">100%</div>
@@ -548,44 +548,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      {/* Trusted Partner CTA Section */}
-      <section className="section bg-gray-50">
-        <div className="container-custom">
-          <div className="bg-gradient-to-br from-blue-800 to-cyan-600 rounded-3xl p-8 md:p-12 lg:p-16 text-center text-white shadow-2xl relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
-              <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
-            </div>
-
-            <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
-                <CheckCircle className="w-4 h-4" />
-                Certified & Trusted
-              </div>
-
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-50">
-                Your Trusted Healthcare
-                <span className="block mt-2">Infrastructure Partner</span>
-              </h2>
-
-              <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
-                ISO 9001:2015 & CE Certified • HTM 02-01 Compliant • Certified
-                Authorised Person (AP-MGPS)
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Link href="contact" className="btn-hero-solid-secondary">
-                  Contact Us Today
-                </Link>
-                <a href="tel:+917067534498" id="btn-hero-call">
-                  Call Now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
     </div>
   );
 };

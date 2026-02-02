@@ -37,7 +37,7 @@ const FAQ = () => {
         "Yes, we provide comprehensive after-installation support including system maintenance, testing, documentation updates, and technical assistance to ensure long-term reliable performance of your healthcare infrastructure.",
     },
     {
-      question: "Can you work on government hospital projects?",
+      question: "Can you work on government hospital clients?",
       answer:
         "Absolutely. We have extensive experience executing MGPS works for multiple District Hospitals across Madhya Pradesh on sub-contract basis, all compliant with HTM 02-01 standards.",
     },

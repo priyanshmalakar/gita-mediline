@@ -405,9 +405,9 @@ const ServicesPage = () => {
                 <CheckCircle className="w-5 h-5" />
                 Request Consultation
               </Link>
-              <Link href="/projects" className="btn-outline">
+              <Link href="/clients" className="btn-outline">
                 <ArrowRight className="w-5 h-5" />
-                View Our Projects
+                View Our Clients
               </Link>
             </div>
           </div>

@@ -18,10 +18,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const ProjectsPage = () => {
+const ClientsPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
 
-  const projects = {
+  const clients = {
     private: [
       {
         id: 1,
@@ -70,17 +70,17 @@ const ProjectsPage = () => {
         name: "Vijay Lakshmi Hospital",
         location: "Khargone",
         category: "Multi-specialty Hospital",
-        workDone: "MGPS Installation",
+        workDone: "MGPS Installation & Modular OT",
         address: "Main Road, Khargone",
         city: "Khargone, Madhya Pradesh",
         rating: 4.6,
         reviews: "3,000+",
         phone: "Contact via hospital",
         specs: [
+          "Modular OT Setup",
           "Complete MGPS Setup",
           "Medical Air & Vacuum",
           "Gas Manifold Systems",
-          "Safety Monitoring Systems",
         ],
         logo: "/assets/clients/vijay-lakshmi.png",
         established: "Leading hospital in Khargone",
@@ -246,7 +246,7 @@ const ProjectsPage = () => {
         address: "Various District Hospitals",
         city: "Madhya Pradesh",
         rating: 4.5,
-        reviews: "Government Projects",
+        reviews: "Government Clients",
         phone: "Various locations",
         specs: [
           "HTM 02-01 Compliant Work",
@@ -261,23 +261,23 @@ const ProjectsPage = () => {
     ],
   };
 
-  const allProjects = [
-    ...projects.private,
-    ...projects.critical,
-    ...projects.government,
+  const allClients = [
+    ...clients.private,
+    ...clients.critical,
+    ...clients.government,
   ];
 
-  const filteredProjects =
+  const filteredClients =
     activeFilter === "all"
-      ? allProjects
+      ? allClients
       : activeFilter === "private"
-      ? projects.private
+      ? clients.private
       : activeFilter === "critical"
-      ? projects.critical
-      : projects.government;
+      ? clients.critical
+      : clients.government;
 
   const stats = [
-    { icon: Building2, number: "50+", label: "Projects Completed" },
+    { icon: Building2, number: "50+", label: "Clients Completed" },
     { icon: Users, number: "15+", label: "Healthcare Partners" },
     { icon: Award, number: "100%", label: "HTM Compliance" },
     { icon: Heart, number: "5+", label: "Years Experience" },
@@ -300,7 +300,7 @@ const ProjectsPage = () => {
           <div className="max-w-4xl mx-auto text-center space-y-4">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
               <Building2 className="w-4 h-4" />
-              Our Projects
+              Our Clients
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
@@ -334,7 +334,7 @@ const ProjectsPage = () => {
       </section>
 
       {/* Filter Section */}
-      <section className="section bg-gray-50 border-b border-gray-200">
+      {/* <section className="section bg-gray-50 border-b border-gray-200">
         <div className="container-custom">
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button
@@ -345,7 +345,7 @@ const ProjectsPage = () => {
                   : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
               }`}
             >
-              All Projects ({allProjects.length})
+              All Clients ({allClients.length})
             </button>
             <button
               onClick={() => setActiveFilter("private")}
@@ -355,7 +355,7 @@ const ProjectsPage = () => {
                   : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
               }`}
             >
-              Private Hospitals ({projects.private.length})
+              Private Hospitals ({clients.private.length})
             </button>
             <button
               onClick={() => setActiveFilter("critical")}
@@ -365,7 +365,7 @@ const ProjectsPage = () => {
                   : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
               }`}
             >
-              Critical Care ({projects.critical.length})
+              Critical Care ({clients.critical.length})
             </button>
             <button
               onClick={() => setActiveFilter("government")}
@@ -375,17 +375,17 @@ const ProjectsPage = () => {
                   : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
               }`}
             >
-              Government ({projects.government.length})
+              Government ({clients.government.length})
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Projects Grid */}
+      {/* Clients Grid */}
       <section className="section bg-white">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProjects.map((project) => (
+            {filteredClients.map((project) => (
               <div
                 key={project.id}
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden"
@@ -412,7 +412,7 @@ const ProjectsPage = () => {
                   </div>
 
                   {/* Rating */}
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <div className="flex items-center gap-1">
                       {[...Array(5)].map((_, i) => (
                         <Star
@@ -431,7 +431,7 @@ const ProjectsPage = () => {
                     <span className="text-xs text-gray-500">
                       ({project.reviews} reviews)
                     </span>
-                  </div>
+                  </div> */}
 
                   {/* Work Done */}
                   <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
@@ -520,4 +520,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage;
+export default ClientsPage;

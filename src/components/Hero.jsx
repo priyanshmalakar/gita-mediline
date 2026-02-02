@@ -12,11 +12,11 @@ import {
   Mail,
 } from "lucide-react";
 import Image from "next/image";
-import banner1 from "../assets/banner/banner7.jpeg";
+import banner1 from "../assets/banner/banner.jpeg";
 import banner2 from "../assets/banner/banner2.jpeg";
-import banner3 from "../assets/banner/banner3.jpeg";
-import banner4 from "../assets/banner/banner4.jpg";
-import banner5 from "../assets/banner/banner5.jpeg";
+// import banner3 from "../assets/banner/banner3.jpeg";
+import banner4 from "../assets/banner/banner6.jpeg";
+import banner5 from "../assets/banner/banner7.jpeg";
 import Link from "next/link";
 
 const Hero = () => {
@@ -26,7 +26,7 @@ const Hero = () => {
   const images = [
     banner1.src,
     banner2.src,
-    banner3.src,
+    // banner3.src,
     banner4.src,
     banner5.src,
   ];
@@ -69,7 +69,7 @@ const Hero = () => {
           </div>
 
           {/* Enhanced Gradient Overlay - Better readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/85 via-gray-900/75 to-gray-900/90 md:bg-gradient-to-r md:from-gray-900 md:via-gray-900/75 md:to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/75 to-gray-900/90 md:bg-gradient-to-r md:from-gray-900 md:via-gray-900/75 md:to-transparent"></div>
         </div>
 
         {/* Carousel Indicators */}
@@ -153,222 +153,7 @@ const Hero = () => {
                 </a>
               </div>
             </div>
-            {/* Right Visual - Pipeline System - Professional Design */}
-            <div className="relative h-96 lg:h-[400px] animate-fade-in hidden lg:block">
-              {/* Pipeline Illustration Container */}
-              <div className="relative h-full rounded-3xl overflow-hidden">
-                {/* Animated Pipeline Network */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  {/* Central Hub */}
-                  <div className="relative w-full h-full flex items-center justify-center">
-                    {/* Main Central Circle */}
-                    <div className="relative z-10">
-                      <div className="w-40 h-40 bg-white/25 backdrop-blur-xl rounded-full flex items-center justify-center border-4 border-white/40 shadow-2xl">
-                        <div className="w-28 h-28 bg-white/30 rounded-full flex items-center justify-center">
-                          <Wrench className="w-12 h-12 text-white drop-shadow-lg" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Pipeline SVG - Clean and Organized */}
-                    <svg
-                      className="absolute inset-0 w-full h-full"
-                      viewBox="0 0 500 500"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      {/* Horizontal Lines */}
-                      {/* Left Line */}
-                      <line
-                        x1="80"
-                        y1="250"
-                        x2="180"
-                        y2="250"
-                        stroke="white"
-                        strokeWidth="6"
-                        opacity="0.5"
-                      />
-                      <circle
-                        cx="80"
-                        cy="250"
-                        r="12"
-                        fill="white"
-                        opacity="0.6"
-                      >
-                        <animate
-                          attributeName="opacity"
-                          values="0.6;1;0.6"
-                          dur="2s"
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-
-                      {/* Right Line */}
-                      <line
-                        x1="320"
-                        y1="250"
-                        x2="420"
-                        y2="250"
-                        stroke="white"
-                        strokeWidth="6"
-                        opacity="0.5"
-                      />
-                      <circle
-                        cx="420"
-                        cy="250"
-                        r="12"
-                        fill="white"
-                        opacity="0.6"
-                      >
-                        <animate
-                          attributeName="opacity"
-                          values="0.6;1;0.6"
-                          dur="2s"
-                          begin="0.5s"
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-
-                      {/* Vertical Lines */}
-                      {/* Top Line */}
-                      <line
-                        x1="250"
-                        y1="80"
-                        x2="250"
-                        y2="180"
-                        stroke="white"
-                        strokeWidth="6"
-                        opacity="0.5"
-                      />
-                      <circle
-                        cx="250"
-                        cy="80"
-                        r="12"
-                        fill="white"
-                        opacity="0.6"
-                      >
-                        <animate
-                          attributeName="opacity"
-                          values="0.6;1;0.6"
-                          dur="2s"
-                          begin="1s"
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-
-                      {/* Bottom Line */}
-                      <line
-                        x1="250"
-                        y1="320"
-                        x2="250"
-                        y2="420"
-                        stroke="white"
-                        strokeWidth="6"
-                        opacity="0.5"
-                      />
-                      <circle
-                        cx="250"
-                        cy="420"
-                        r="12"
-                        fill="white"
-                        opacity="0.6"
-                      >
-                        <animate
-                          attributeName="opacity"
-                          values="0.6;1;0.6"
-                          dur="2s"
-                          begin="1.5s"
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-
-                      {/* Flow Indicators - Subtle moving dots */}
-                      <circle cx="0" cy="250" r="4" fill="white" opacity="0.8">
-                        <animate
-                          attributeName="cx"
-                          values="80;180;80"
-                          dur="3s"
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-
-                      <circle cx="0" cy="250" r="4" fill="white" opacity="0.8">
-                        <animate
-                          attributeName="cx"
-                          values="320;420;320"
-                          dur="3s"
-                          begin="0.5s"
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-
-                      <circle cx="250" cy="0" r="4" fill="white" opacity="0.8">
-                        <animate
-                          attributeName="cy"
-                          values="80;180;80"
-                          dur="3s"
-                          begin="1s"
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-
-                      <circle cx="250" cy="0" r="4" fill="white" opacity="0.8">
-                        <animate
-                          attributeName="cy"
-                          values="320;420;320"
-                          dur="3s"
-                          begin="1.5s"
-                          repeatCount="indefinite"
-                        />
-                      </circle>
-                    </svg>
-
-                    {/* Gas Type Labels - Professionally Positioned */}
-                    {/* Top - Oxygen */}
-                    <div className="absolute top-12 left-1/2 -translate-x-1/2 bg-white/25 backdrop-blur-lg rounded-xl px-4 py-2.5 border border-white/30 shadow-xl">
-                      <div className="text-white font-semibold text-sm tracking-wide">
-                        O₂ - Oxygen
-                      </div>
-                    </div>
-
-                    {/* Bottom - Nitrous Oxide */}
-                    <div className="absolute bottom-12 left-1/2 -translate-x-1/2 bg-white/25 backdrop-blur-lg rounded-xl px-4 py-2.5 border border-white/30 shadow-xl">
-                      <div className="text-white font-semibold text-sm tracking-wide">
-                        N₂O - Nitrous Oxide
-                      </div>
-                    </div>
-
-                    {/* Left - Medical Air */}
-                    <div className="absolute top-1/2 left-12 -translate-y-1/2 bg-white/25 backdrop-blur-lg rounded-xl px-4 py-2.5 border border-white/30 shadow-xl">
-                      <div className="text-white font-semibold text-sm tracking-wide">
-                        Medical Air
-                      </div>
-                    </div>
-
-                    {/* Right - Vacuum */}
-                    <div className="absolute top-1/2 right-12 -translate-y-1/2 bg-white/25 backdrop-blur-lg rounded-xl px-4 py-2.5 border border-white/30 shadow-xl">
-                      <div className="text-white font-semibold text-sm tracking-wide">
-                        Vacuum
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Subtle Grid Pattern Overlay */}
-                <div className="absolute inset-0 opacity-5">
-                  <div className="grid grid-cols-10 grid-rows-10 h-full w-full">
-                    {[...Array(100)].map((_, i) => (
-                      <div key={i} className="border border-white/30"></div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Corner Accents */}
-                <div className="absolute top-4 left-4 w-12 h-12 border-t-2 border-l-2 border-white/20 rounded-tl-lg"></div>
-                <div className="absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 border-white/20 rounded-tr-lg"></div>
-                <div className="absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-white/20 rounded-bl-lg"></div>
-                <div className="absolute bottom-4 right-4 w-12 h-12 border-b-2 border-r-2 border-white/20 rounded-br-lg"></div>
-              </div>
-            </div>
+           
           </div>
         </div>
 

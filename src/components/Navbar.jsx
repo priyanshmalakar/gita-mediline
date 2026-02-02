@@ -26,10 +26,10 @@ export default function Navbar() {
       dropdownItems: [
         { name: "MGPS", href: "services" },
         { name: "Modular OT", href: "services" },
-        { name: "Medical Equipment", href: "services" },
+        // { name: "Medical Equipment", href: "services" },
       ],
     },
-    { name: "Projects", href: "projects" },
+    { name: "Clients", href: "clients" },
     { name: "Certifications", href: "certifications" },
     { name: "Contact", href: "contact" },
     { name: "FAQ", href: "faq" },
@@ -107,14 +107,14 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="flex items-center gap-2">
-              <div className="flex flex-col">
-                <span className="text-xl lg:text-2xl font-bold gradient-text">
-                  GITA MEDILINE
-                </span>
-                <span className="text-[10px] lg:text-xs text-gray-600 font-medium tracking-wider">
-                  SERVICES
-                </span>
-              </div>
+                <div className="flex flex-col">
+                  <span className="text-xl lg:text-2xl font-bold gradient-text">
+                    GITA MEDILINE
+                  </span>
+                  <span className="text-[10px] lg:text-xs text-gray-600 font-medium tracking-wider">
+                    SERVICES
+                  </span>
+                </div>
               </Link>
             </div>
 
@@ -263,12 +263,12 @@ export default function Navbar() {
                   </Link>
                 )}
               </div>
-            ))}
+            ))} 
 
             {/* Call Now Button */}
             <a
               href="tel:+917067534498"
-              className="block w-full mt-4 btn-primary text-center flex items-center justify-center gap-2 shadow-lg"
+              className="block w-full mt-4 btn-primary text-center  items-center justify-center gap-2 shadow-lg"
               onClick={() => setIsOpen(false)}
             >
               <Phone className="w-4 h-4" />

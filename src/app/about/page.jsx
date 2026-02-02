@@ -238,7 +238,7 @@ const AboutPage = () => {
 
                   <div className="bg-blue-50 rounded-lg p-4 mt-6">
                     <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                      All MGPS projects are executed under Authorised Person
+                      All MGPS clients are executed under Authorised Person
                       supervision, ensuring compliance with recognised
                       healthcare standards and best practices.
                     </p>
@@ -319,11 +319,11 @@ const AboutPage = () => {
                 Contact Us
               </Link>
               <Link
-                href="/projects"
+                href="/clients"
                 className="btn-outline"
               >
                 <CheckCircle className="w-5 h-5" />
-                View Our Projects
+                View Our Clients
               </Link>
             </div>
           </div>
