@@ -38,7 +38,7 @@ export default function Navbar() {
   return (
     <>
       {/* Top Contact Bar - Desktop */}
-      <div className="hidden lg:block bg-gradient-to-r from-blue-900 to-blue-900 text-white py-1.5">
+      <div className="hidden lg:block bg-gradient-to-r from-[#005B77] to-[#44AB7E] text-white py-1.5">
         <div className="container-custom">
           <div className="flex justify-between items-center text-sm">
             <div className="flex items-center gap-6">
@@ -66,16 +66,16 @@ export default function Navbar() {
                 <span>gitamediline@gmail.com</span>
               </a>
             </div>
-            <div className="flex items-center gap-2 text-blue-100">
+            {/* <div className="flex items-center gap-2 text-blue-100">
               <MapPin className="w-4 h-4" />
               <span>Mandleshwar & Indore, Madhya Pradesh</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
 
       {/* Mobile Top Contact Bar - Always Visible */}
-      <div className="lg:hidden bg-gradient-to-r from-blue-600 to-blue-700 text-white py-2 px-4 fixed top-0 left-0 right-0 z-50">
+      <div className="lg:hidden bg-gradient-to-r from-[#005B77] to-[#44AB7E] text-white py-2 px-4 fixed top-0 left-0 right-0 z-50">
         <div className="flex justify-between items-center text-xs">
           <a
             href="tel:+917067534498"

@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import banner1 from "../assets/banner/banner.jpeg";
-import banner2 from "../assets/banner/banner2.jpeg";
+
 // import banner3 from "../assets/banner/banner3.jpeg";
 import banner4 from "../assets/banner/banner6.jpeg";
 import banner5 from "../assets/banner/banner7.jpeg";
@@ -25,7 +25,6 @@ const Hero = () => {
 
   const images = [
     banner1.src,
-    banner2.src,
     // banner3.src,
     banner4.src,
     banner5.src,
@@ -135,14 +134,14 @@ const Hero = () => {
 
               {/* CTA Buttons - Side by side on mobile, improved styling */}
               <div className="flex flex-row gap-3 pt-2">
-                <Link
+                {/* <Link
                   href="/contact"
                   className="flex-1 sm:flex-none btn-hero-primary group"
                 >
                   <Mail className="w-4 h-4 md:w-5 md:h-5" />
                   <span className="hidden xs:inline">Contact Us</span>
                   <span className="xs:hidden">Contact</span>
-                </Link>
+                </Link> */}
                 <a
                   href="tel:+917067534498"
                   className="flex-1 sm:flex-none  group"

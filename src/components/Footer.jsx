@@ -30,7 +30,7 @@ const Footer = () => {
   const services = [
     { name: "MGPS Solutions", href: "services" },
     { name: "Modular OT", href: "services" },
-    { name: "Central Gas Supply", href: "services" }
+    { name: "Central Gas Supply", href: "services" },
     // { name: "Medical Equipment", href: "services" },
   ];
 
@@ -96,7 +96,7 @@ const Footer = () => {
                 <p className="text-xs text-gray-400 font-medium tracking-wider">
                   SERVICES
                 </p>
-                <p className="text-blue-400 italic text-sm mt-1">
+                <p className="text-[#44AB7E] italic text-sm mt-1">
                   Life Support Systems...
                 </p>
               </div>
@@ -107,16 +107,14 @@ const Footer = () => {
               </p>
 
               {/* Certifications - Compact */}
-              <div className="flex flex-wrap gap-2">
-                <div className="flex items-center gap-1 text-xs bg-white/10 px-2 py-1 rounded">
-                  <Award className="w-3 h-3 text-blue-400" />
-                  <span>ISO 9001:2015</span>
-                </div>
-                <div className="flex items-center gap-1 text-xs bg-white/10 px-2 py-1 rounded">
-                  <Shield className="w-3 h-3 text-green-400" />
-                  <span>CE Certified</span>
-                </div>
-              </div>
+           <div className="flex items-center gap-1 text-xs bg-white/10 px-2 py-1 rounded">
+  <Award className="w-3 h-3 text-[#005B77]" />
+  <span>ISO 9001:2015</span>
+</div>
+<div className="flex items-center gap-1 text-xs bg-white/10 px-2 py-1 rounded">
+  <Shield className="w-3 h-3 text-[#44AB7E]" />
+  <span>CE Certified</span>
+</div>
 
               {/* Social Media - Compact */}
               <div>
@@ -150,7 +148,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition-colors text-sm group"
+                className="flex items-center gap-1 text-gray-300 hover:text-[#44AB7E] transition-colors text-sm group"
                     >
                       <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       <span>{link.name}</span>
@@ -170,7 +168,7 @@ const Footer = () => {
                   <li key={service.name}>
                     <Link
                       href={service.href}
-                      className="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition-colors text-sm group"
+                  className="flex items-center gap-1 text-gray-300 hover:text-[#44AB7E] transition-colors text-sm group"
                     >
                       <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       <span>{service.name}</span>
@@ -191,14 +189,14 @@ const Footer = () => {
                 <div className="space-y-1">
                   <a
                     href="tel:+917067534498"
-                    className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors text-sm group"
+                    className="flex items-center gap-2 text-gray-300 hover:text-[#44AB7E] transition-colors text-sm group"
                   >
                     <Phone className="w-4 h-4 flex-shrink-0" />
                     <span>+91 70675 34498</span>
                   </a>
                   <a
                     href="tel:+917389112339"
-                    className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors text-sm group"
+                    className="flex items-center gap-2 text-gray-300 hover:text-[#44AB7E] transition-colors text-sm group"
                   >
                     <Phone className="w-4 h-4 flex-shrink-0" />
                     <span>+91 73891 12339</span>
@@ -208,7 +206,7 @@ const Footer = () => {
                 {/* Email */}
                 <a
                   href="mailto:gitamediline@gmail.com"
-                  className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors text-sm group"
+                  className="flex items-center gap-2 text-gray-300 hover:text-[#44AB7E] transition-colors text-sm group"
                 >
                   <Mail className="w-4 h-4 flex-shrink-0" />
                   <span className="break-all">gitamediline@gmail.com</span>
@@ -217,7 +215,7 @@ const Footer = () => {
                 {/* Locations - Very Compact */}
                 <div className="space-y-2 text-xs text-gray-400">
                   <div className="flex items-start gap-2">
-                    <MapPin className="w-4 h-4 flex-shrink-0 text-blue-400 mt-0.5" />
+           <MapPin className="w-4 h-4 flex-shrink-0 text-[#005B77] mt-0.5" />
                     <div>
                       <p className="text-sm font-bold text-white  tracking-wide">
                         Mandleshwar
@@ -228,7 +226,7 @@ const Footer = () => {
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
-                    <MapPin className="w-4 h-4 flex-shrink-0 text-green-400 mt-0.5" />
+                 <MapPin className="w-4 h-4 flex-shrink-0 text-[#44AB7E] mt-0.5" />
                     <div>
                       <p className="text-sm font-bold text-white  tracking-wide">
                         Indore
@@ -253,21 +251,21 @@ const Footer = () => {
             <div className="flex items-center gap-4">
               <a
                 href="#privacy"
-                className="hover:text-blue-400 transition-colors"
+                className="hover:text-[#44AB7E] transition-colors"
               >
                 Privacy
               </a>
               <span>|</span>
               <a
                 href="#terms"
-                className="hover:text-blue-400 transition-colors"
+                className="hover:text-[#44AB7E] transition-colors"
               >
                 Terms
               </a>
               <span>|</span>
               <a
                 href="#sitemap"
-                className="hover:text-blue-400 transition-colors"
+                className="hover:text-[#44AB7E] transition-colors"
               >
                 Sitemap
               </a>
@@ -276,8 +274,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Decorative Bottom Line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#005B77] via-[#44AB7E] to-[#005B77]"></div>
     </footer>
   );
 };
