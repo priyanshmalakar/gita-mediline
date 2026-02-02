@@ -309,12 +309,12 @@ const ClientsPage = () => {
 
             <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
               Successfully delivered MGPS and critical care infrastructure
-              solutions across Madhya Pradesh
+              solutions 
             </p>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-6 max-w-4xl mx-auto">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-6 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <div
                 key={index}
@@ -329,7 +329,7 @@ const ClientsPage = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 

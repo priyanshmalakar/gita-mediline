@@ -92,12 +92,12 @@ const Hero = () => {
             {/* Left Content - Reorganized for Mobile */}
             <div className="space-y-4 md:space-y-6 animate-slide-up">
               {/* Top Badge - Simplified for Mobile */}
-              <div className="inline-flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-2 md:px-4 md:py-2.5 rounded-full shadow-lg border border-blue-100">
+              {/* <div className="inline-flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-2 md:px-4 md:py-2.5 rounded-full shadow-lg border border-blue-100">
                 <Award className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
                 <span className="text-xs md:text-sm font-semibold text-gray-700">
                   ISO 9001:2015 & CE Certified
                 </span>
-              </div>
+              </div> */}
 
               {/* Main Heading - Better spacing */}
               <div className="space-y-2 md:space-y-2">

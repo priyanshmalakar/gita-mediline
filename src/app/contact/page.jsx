@@ -198,7 +198,7 @@ const ContactPage = () => {
 
             <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Have a question or need expert consultation for your healthcare
-              infrastructure project? We're here to help.
+              infrastructure project? 
             </p>
           </div>
         </div>
