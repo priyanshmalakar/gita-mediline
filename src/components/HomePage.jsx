@@ -346,7 +346,7 @@ const HomePage = () => {
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-bold mb-1">50+</div>
-                <div className="text-sm text-white/80">Clients Done</div>
+                <div className="text-sm text-white/80">Projects Done</div>
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-bold mb-1">100%</div>

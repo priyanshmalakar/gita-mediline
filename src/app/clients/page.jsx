@@ -33,6 +33,8 @@ import subhisiHospital from "../../assets/clientBanner/subhisiHospital.jpeg";
 import metroMedicare from "../../assets/clientBanner/metroHospital.jpeg";
 import vivekHospital from "../../assets/clientBanner/vivekHospital.jpeg";
 import nakshatra from "../../assets/clientBanner/nakshatra.jpeg";
+import multiple from "../../assets/clientBanner/mulipledistrict.jpeg";
+import jabalpurMultiple from "../../assets/clientBanner/jabalpurmultiple.jpeg";
 const ClientsPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
 
@@ -248,7 +250,7 @@ const ClientsPage = () => {
           "Vacuum & Medical Air",
           "Emergency Support Systems",
         ],
-      logo: nakshatra,
+        logo: nakshatra,
         established: "Advanced ICU facility",
         beds: "Multi-bed ICU",
       },
@@ -261,7 +263,7 @@ const ClientsPage = () => {
         category: "Government Healthcare Facilities",
         workDone: "MGPS Installation - Sub-contract Basis",
         address: "Various District Hospitals",
-        city: "Madhya Pradesh",
+        city: "Indore, Madhya Pradesh",
         rating: 4.5,
         reviews: "Government Clients",
         phone: "Various locations",
@@ -271,7 +273,28 @@ const ClientsPage = () => {
           "Government Standards",
           "Multiple Project Sites",
         ],
-        logo: "https://content.jdmagicbox.com/v2/comp/indore/w4/0731px731.x731.240330114941.d4w4/catalogue/care-chl-hospitals-lig-colony-indore-hospitals-gcxlh59qqr.jpg",
+        logo: multiple,
+        established: "Government healthcare initiative",
+        beds: "Multiple facilities",
+      },
+        {
+        id: 12,
+        name: "School of Excellence Jabalpur",
+        location: "Across Madhya Pradesh",
+        category: "Government Healthcare Facilities",
+        workDone: "MGPS Installation - Sub-contract Basis",
+        address: "Various District Hospitals",
+        city: "Jabalpur, Madhya Pradesh",
+        rating: 4.5,
+        reviews: "Government Clients",
+        phone: "Various locations",
+        specs: [
+          "HTM 02-01 Compliant Work",
+          "District Hospital MGPS",
+          "Government Standards",
+          "Multiple Project Sites",
+        ],
+        logo: jabalpurMultiple,
         established: "Government healthcare initiative",
         beds: "Multiple facilities",
       },
@@ -288,13 +311,13 @@ const ClientsPage = () => {
     activeFilter === "all"
       ? allClients
       : activeFilter === "private"
-        ? clients.private
-        : activeFilter === "critical"
-          ? clients.critical
-          : clients.government;
+      ? clients.private
+      : activeFilter === "critical"
+      ? clients.critical
+      : clients.government;
 
   const stats = [
-    { icon: Building2, number: "50+", label: "Clients Completed" },
+    { icon: Building2, number: "50+", label: "Projects Completed" },
     { icon: Users, number: "15+", label: "Healthcare Partners" },
     { icon: Award, number: "100%", label: "HTM Compliance" },
     { icon: Heart, number: "5+", label: "Years Experience" },
@@ -316,7 +339,6 @@ const ClientsPage = () => {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/45"></div>
 
-
         {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-4">
@@ -337,9 +359,7 @@ const ClientsPage = () => {
         </div>
       </section>
 
-     
-
-      <section className="relative py-10 md:py-10 bg-gradient-to-r">
+      <section className="relative py-4 md:py-6 bg-gradient-to-r">
         {/* Decorative blur circles */}
         <div className="absolute -top-10 -left-10 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
@@ -356,14 +376,14 @@ const ClientsPage = () => {
             className={`mt-3 text-sm md:text-base text-black/90 max-w-2xl mx-auto ${poppins.className}`}
           >
             Our trusted healthcare partners delivering world-class medical
-            infrastructure 
+            infrastructure
           </p>
-          <hr className="mt-4 mx-auto w-40 md:w-56 border-black/60" />
+          {/* <hr className="mt-4 mx-auto w-40 md:w-56 border-black/60" /> */}
         </div>
       </section>
 
       {/* Clients Grid */}
-      <section className="section bg-white">
+      <section className=" bg-white mb-10">
         <div className="container-custom">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredClients.map((project) => (
