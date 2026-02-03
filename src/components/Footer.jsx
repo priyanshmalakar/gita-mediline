@@ -107,14 +107,14 @@ const Footer = () => {
               </p>
 
               {/* Certifications - Compact */}
-           <div className="flex items-center gap-1 text-xs bg-white/10 px-2 py-1 rounded">
-  <Award className="w-3 h-3 text-[#005B77]" />
-  <span>ISO 9001:2015</span>
-</div>
-<div className="flex items-center gap-1 text-xs bg-white/10 px-2 py-1 rounded">
-  <Shield className="w-3 h-3 text-[#44AB7E]" />
-  <span>CE Certified</span>
-</div>
+              <div className="flex items-center gap-1 text-xs bg-white/10 px-2 py-1 rounded">
+                <Award className="w-3 h-3 text-[#005B77]" />
+                <span>ISO 9001:2015</span>
+              </div>
+              <div className="flex items-center gap-1 text-xs bg-white/10 px-2 py-1 rounded">
+                <Shield className="w-3 h-3 text-[#44AB7E]" />
+                <span>CE Certified</span>
+              </div>
 
               {/* Social Media - Compact */}
               <div>
@@ -148,7 +148,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                className="flex items-center gap-1 text-gray-300 hover:text-[#44AB7E] transition-colors text-sm group"
+                      className="flex items-center gap-1 text-gray-300 hover:text-[#44AB7E] transition-colors text-sm group"
                     >
                       <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       <span>{link.name}</span>
@@ -168,7 +168,7 @@ const Footer = () => {
                   <li key={service.name}>
                     <Link
                       href={service.href}
-                  className="flex items-center gap-1 text-gray-300 hover:text-[#44AB7E] transition-colors text-sm group"
+                      className="flex items-center gap-1 text-gray-300 hover:text-[#44AB7E] transition-colors text-sm group"
                     >
                       <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       <span>{service.name}</span>
@@ -215,24 +215,26 @@ const Footer = () => {
                 {/* Locations - Very Compact */}
                 <div className="space-y-2 text-xs text-gray-400">
                   <div className="flex items-start gap-2">
-           <MapPin className="w-4 h-4 flex-shrink-0 text-[#005B77] mt-0.5" />
+                    <MapPin className="w-4 h-4 flex-shrink-0 text-[#005B77] mt-0.5" />
                     <div>
                       <p className="text-sm font-bold text-white  tracking-wide">
                         Mandleshwar
                       </p>
                       <p className="text-sm text-gray-300">
-                        Khargone, Madhya Pradesh
+                        C-09, Main Road, Shri Nagar Colony Mandleshwar, District
+                        Khargone Madhya Pradesh – India
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-2">
-                 <MapPin className="w-4 h-4 flex-shrink-0 text-[#44AB7E] mt-0.5" />
+                    <MapPin className="w-4 h-4 flex-shrink-0 text-[#44AB7E] mt-0.5" />
                     <div>
                       <p className="text-sm font-bold text-white  tracking-wide">
                         Indore
                       </p>
                       <p className="text-sm text-gray-300">
-                        Bangali Square, Madhya Pradesh
+                        51, Main Vandana Nagar Bangali Square, Indore Madhya
+                        Pradesh – India
                       </p>
                     </div>
                   </div>
