@@ -18,12 +18,21 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
-
+import clientBanner from "../../assets/bg-banner/clientBanner.jpg";
 export const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-
+import chl from "../../assets/clientBanner/chl.jpeg";
+import motherHood from "../../assets/clientBanner/motherhood.jpeg";
+import sankareye from "../../assets/clientBanner/sankareye.jpeg";
+import vone from "../../assets/clientBanner/vone.jpeg";
+import vijaylakshmi from "../../assets/clientBanner/vijayLaxmi.jpeg";
+import kdHospital from "../../assets/clientBanner/kdhospital.jpeg";
+import subhisiHospital from "../../assets/clientBanner/subhisiHospital.jpeg";
+import metroMedicare from "../../assets/clientBanner/metroHospital.jpeg";
+import vivekHospital from "../../assets/clientBanner/vivekHospital.jpeg";
+import nakshatra from "../../assets/clientBanner/nakshatra.jpeg";
 const ClientsPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
 
@@ -46,7 +55,7 @@ const ClientsPage = () => {
           "Ward Gas Systems",
           "Specialized Medical Gas Supply",
         ],
-        logo: "https://content3.jdmagicbox.com/comp/indore/g8/0731px731.x731.191015234402.g5g8/catalogue/dr-nikhilesh-pasari-a-b-road-lig-colony-indore-pulmonologists-doctors-frzzw6ndgb.jpg",
+        logo: chl,
         established: "Leading cardiac care",
         beds: "Multi-specialty wards",
       },
@@ -68,7 +77,7 @@ const ClientsPage = () => {
           "Pediatric Gas Systems",
           "24/7 Critical Care Support",
         ],
-        logo: "https://www.healthcareradius.in/cloud/2021/11/15/motherhoodpune.jpg",
+        logo: motherHood,
         established: "Premium maternity & childcare",
         beds: "Multi-bed NICU facility",
       },
@@ -89,7 +98,7 @@ const ClientsPage = () => {
           "Alarm & Monitoring Systems",
           "HTM 02-01 Compliant",
         ],
-        logo: "https://content.jdmagicbox.com/v2/comp/bangalore/50/080p4313350/catalogue/sankara-eye-hospital-marathahalli-bangalore-eye-hospitals-t6wglig41w.jpg",
+        logo: sankareye,
         established: "Super specialty eye care facility",
         beds: "Multi-specialty",
       },
@@ -110,7 +119,7 @@ const ClientsPage = () => {
           "Medical Infrastructure",
           "Safety Compliance",
         ],
-        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfwTtYpp9XkF4NdE1evoC316E-Fkz0t1DqNw&s",
+        logo: vone,
         established: "Modern day care facility",
         beds: "Day care beds",
       },
@@ -131,7 +140,7 @@ const ClientsPage = () => {
           "Medical Air & Vacuum",
           "Gas Manifold Systems",
         ],
-        logo: "https://content3.jdmagicbox.com/comp/sanawad/q5/9999pxxxx.xxxx.111231111035.z6q5/catalogue/vijaylaxmi-hospital-and-research-centre-sanawad-sanawad-infertility-doctors-74uyy7bpzh.jpg",
+        logo: vijaylakshmi,
         established: "Leading hospital in Khargone",
         beds: "Multi-specialty care",
       },
@@ -152,7 +161,7 @@ const ClientsPage = () => {
           "Oxygen Supply Systems",
           "Complete MGPS Infrastructure",
         ],
-        logo: "https://content.jdmagicbox.com/comp/agra/s7/0562px562.x562.231209122609.f5s7/catalogue/a4pwjv4wfn259bb-7n20o9seqs.jpg",
+        logo: kdHospital,
         established: "Trusted healthcare provider",
         beds: "Multi-bed facility",
       },
@@ -174,7 +183,7 @@ const ClientsPage = () => {
           "Installation & Commissioning",
           "Compliance Documentation",
         ],
-        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWv5mciUtR9JUdiJax1myd3yNC_kLvkgrNMQ&s",
+        logo: subhisiHospital,
         established: "Quality healthcare facility",
         beds: "Multi-bed capacity",
       },
@@ -195,7 +204,7 @@ const ClientsPage = () => {
           "Testing & Commissioning",
           "HTM Standards Compliance",
         ],
-        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ4ZL9uRH7N46afRR6pDywTRTczdc21-5t3w&s",
+        logo: metroMedicare,
         established: "Trusted medical center",
         beds: "Multi-specialty",
       },
@@ -218,7 +227,7 @@ const ClientsPage = () => {
           "Medical Gas Outlets",
           "Monitoring Systems",
         ],
-        logo: "https://content.jdmagicbox.com/comp/indore/l7/0731px731.x731.220616185335.l1l7/catalogue/-d14cg5k56q.jpg",
+        logo: vivekHospital,
         established: "Quality healthcare center",
         beds: "NICU facility",
       },
@@ -239,7 +248,7 @@ const ClientsPage = () => {
           "Vacuum & Medical Air",
           "Emergency Support Systems",
         ],
-        logo: "https://content3.jdmagicbox.com/v2/comp/indore/q4/0731px731.x731.170928085212.q4q4/catalogue/nakshatra-heart-and-multispeciality-hospital-ring-road-indore-cardiac-hospitals-rgu47rtbzv.jpg",
+      logo: nakshatra,
         established: "Advanced ICU facility",
         beds: "Multi-bed ICU",
       },
@@ -299,7 +308,7 @@ const ClientsPage = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url("https://i.pinimg.com/736x/85/4a/8f/854a8f04558eaba629a4132a6ef9731d.jpg")`,
+            backgroundImage: `url(${clientBanner.src})`,
             filter: "brightness(0.75) contrast(1.1)",
           }}
         ></div>
@@ -307,15 +316,6 @@ const ClientsPage = () => {
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/45"></div>
 
-        {/* Pattern Overlay (optional – same as tumhara) */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          ></div>
-        </div>
 
         {/* Content */}
         <div className="container-custom relative z-10">
@@ -337,53 +337,7 @@ const ClientsPage = () => {
         </div>
       </section>
 
-      {/* Filter Section */}
-      {/* <section className="section bg-gray-50 border-b border-gray-200">
-        <div className="container-custom">
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <button
-              onClick={() => setActiveFilter("all")}
-              className={`px-6 py-2.5 rounded-full font-semibold transition-all duration-300 ${
-                activeFilter === "all"
-                  ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg"
-                  : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
-              }`}
-            >
-              All Clients ({allClients.length})
-            </button>
-            <button
-              onClick={() => setActiveFilter("private")}
-              className={`px-6 py-2.5 rounded-full font-semibold transition-all duration-300 ${
-                activeFilter === "private"
-                  ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg"
-                  : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
-              }`}
-            >
-              Private Hospitals ({clients.private.length})
-            </button>
-            <button
-              onClick={() => setActiveFilter("critical")}
-              className={`px-6 py-2.5 rounded-full font-semibold transition-all duration-300 ${
-                activeFilter === "critical"
-                  ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg"
-                  : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
-              }`}
-            >
-              Critical Care ({clients.critical.length})
-            </button>
-            <button
-              onClick={() => setActiveFilter("government")}
-              className={`px-6 py-2.5 rounded-full font-semibold transition-all duration-300 ${
-                activeFilter === "government"
-                  ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg"
-                  : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
-              }`}
-            >
-              Government ({clients.government.length})
-            </button>
-          </div>
-        </div>
-      </section> */}
+     
 
       <section className="relative py-10 md:py-10 bg-gradient-to-r">
         {/* Decorative blur circles */}
@@ -402,7 +356,7 @@ const ClientsPage = () => {
             className={`mt-3 text-sm md:text-base text-black/90 max-w-2xl mx-auto ${poppins.className}`}
           >
             Our trusted healthcare partners delivering world-class medical
-            infrastructure across Madhya Pradesh
+            infrastructure 
           </p>
           <hr className="mt-4 mx-auto w-40 md:w-56 border-black/60" />
         </div>
@@ -418,14 +372,14 @@ const ClientsPage = () => {
                 className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
               >
                 {/* Image Section */}
-                <div className="relative h-44 overflow-hidden">
+                <div className="relative h-[35vh] overflow-hidden">
                   <img
                     src={
-                      project.logo ||
+                      project.logo.src ||
                       "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200"
                     }
                     alt={project.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full  image-contain transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 

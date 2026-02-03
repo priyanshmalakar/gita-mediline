@@ -15,7 +15,7 @@ import {
   Briefcase,
 } from "lucide-react";
 import Link from "next/link";
-
+import aboutBanner from "../../assets/bg-banner/aboutBanner.jpg";
 const AboutPage = () => {
   const philosophyPoints = [
     {
@@ -74,7 +74,7 @@ const AboutPage = () => {
   <div
     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
     style={{
-      backgroundImage: `url("https://i.pinimg.com/736x/67/02/0c/67020c22d1f36767cfd942b7c760a133.jpg")`,
+      backgroundImage: `url(${aboutBanner.src})`,
       filter: "brightness(0.75) contrast(1.1)",
     }}
   ></div>
