@@ -24,8 +24,8 @@ export default function Navbar() {
       href: "#services",
       hasDropdown: true,
       dropdownItems: [
-        { name: "MGPS", href: "services" },
-        { name: "Modular OT", href: "services" },
+        { name: "MGPS", href: "mgps" },
+        { name: "Modular OT", href: "modularOT" },
         // { name: "Medical Equipment", href: "services" },
       ],
     },

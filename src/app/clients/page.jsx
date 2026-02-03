@@ -314,22 +314,7 @@ const ClientsPage = () => {
           </div>
 
           {/* Stats */}
-          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-6 max-w-4xl mx-auto">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-md rounded-xl p-4 md:p-6 border border-white/20 text-center"
-              >
-                <stat.icon className="w-8 h-8 md:w-10 md:h-10 text-white mx-auto mb-2" />
-                <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-xs md:text-sm text-blue-100">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div> */}
+          {/* <dic> */}
         </div>
       </section>
 
