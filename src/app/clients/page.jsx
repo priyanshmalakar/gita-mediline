@@ -17,6 +17,12 @@ import {
   Filter,
 } from "lucide-react";
 import Link from "next/link";
+import { Poppins } from "next/font/google";
+
+export const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 const ClientsPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -25,176 +31,6 @@ const ClientsPage = () => {
     private: [
       {
         id: 1,
-        name: "Sankara Eye Centre",
-        location: "Indore",
-        category: "Eye Care Hospital",
-        workDone: "MGPS Installation & Critical Care Infrastructure",
-        address: "Scheme No. 74C, Vijay Nagar Main Road, AB Road, Indore",
-        city: "Indore, Madhya Pradesh 452010",
-        rating: 4.8,
-        reviews: "17,000+",
-        phone: "0731-4744747",
-        specs: [
-          "Complete MGPS Design & Installation",
-          "Medical Gas Outlets",
-          "Alarm & Monitoring Systems",
-          "HTM 02-01 Compliant",
-        ],
-        logo: "/assets/clients/sankara-eye.png", // Add your logo here
-        established: "Super specialty eye care facility",
-        beds: "Multi-specialty",
-      },
-      {
-        id: 2,
-        name: "Kamla Devi Hospital",
-        location: "Indore",
-        category: "Multi-specialty Hospital",
-        workDone: "MGPS & Critical Care Units",
-        address: "Multiple Locations in Indore",
-        city: "Indore, Madhya Pradesh",
-        rating: 4.5,
-        reviews: "5,000+",
-        phone: "Contact via hospital",
-        specs: [
-          "Medical Gas Pipeline Installation",
-          "Critical Care Support",
-          "Oxygen Supply Systems",
-          "Complete MGPS Infrastructure",
-        ],
-        logo: "/assets/clients/kamla-devi.png",
-        established: "Trusted healthcare provider",
-        beds: "Multi-bed facility",
-      },
-      {
-        id: 3,
-        name: "Vijay Lakshmi Hospital",
-        location: "Khargone",
-        category: "Multi-specialty Hospital",
-        workDone: "MGPS Installation & Modular OT",
-        address: "Main Road, Khargone",
-        city: "Khargone, Madhya Pradesh",
-        rating: 4.6,
-        reviews: "3,000+",
-        phone: "Contact via hospital",
-        specs: [
-          "Modular OT Setup",
-          "Complete MGPS Setup",
-          "Medical Air & Vacuum",
-          "Gas Manifold Systems",
-        ],
-        logo: "/assets/clients/vijay-lakshmi.png",
-        established: "Leading hospital in Khargone",
-        beds: "Multi-specialty care",
-      },
-      {
-        id: 4,
-        name: "Subhishi Hospital",
-        location: "Khargone",
-        category: "Multi-specialty Hospital",
-        workDone: "MGPS Infrastructure",
-        address: "Khargone District",
-        city: "Khargone, Madhya Pradesh",
-        rating: 4.4,
-        reviews: "2,500+",
-        phone: "Contact via hospital",
-        specs: [
-          "Medical Gas Pipeline",
-          "Oxygen & Nitrous Oxide Systems",
-          "Installation & Commissioning",
-          "Compliance Documentation",
-        ],
-        logo: "/assets/clients/subhishi.png",
-        established: "Quality healthcare facility",
-        beds: "Multi-bed capacity",
-      },
-      {
-        id: 5,
-        name: "Metro Medicare Hospital",
-        location: "Burhanpur",
-        category: "Multi-specialty Hospital",
-        workDone: "MGPS Installation",
-        address: "Main Area, Burhanpur",
-        city: "Burhanpur, Madhya Pradesh",
-        rating: 4.5,
-        reviews: "2,000+",
-        phone: "Contact via hospital",
-        specs: [
-          "Medical Gas Pipeline Setup",
-          "Critical Care Infrastructure",
-          "Testing & Commissioning",
-          "HTM Standards Compliance",
-        ],
-        logo: "/assets/clients/metro-medicare.png",
-        established: "Trusted medical center",
-        beds: "Multi-specialty",
-      },
-    ],
-    critical: [
-      {
-        id: 6,
-        name: "Motherhood Hospital",
-        location: "Indore",
-        category: "Women & Child Care Hospital",
-        workDone: "PICU - Pediatric Intensive Care Unit",
-        address: "Plot No. 34-39, Mechanic Nagar, Scheme No. 54, Vijay Nagar",
-        city: "Indore, Madhya Pradesh 452010",
-        rating: 4.7,
-        reviews: "10,000+",
-        phone: "8494800092",
-        specs: [
-          "PICU MGPS Infrastructure",
-          "Level III NICU Setup",
-          "Pediatric Gas Systems",
-          "24/7 Critical Care Support",
-        ],
-        logo: "/assets/clients/motherhood.png",
-        established: "Premium maternity & childcare",
-        beds: "Multi-bed NICU facility",
-      },
-      {
-        id: 7,
-        name: "Vivek Memorial Hospital",
-        location: "Indore",
-        category: "Multi-specialty Hospital",
-        workDone: "NICU - Neonatal Intensive Care Unit",
-        address: "Main Location, Indore",
-        city: "Indore, Madhya Pradesh",
-        rating: 4.6,
-        reviews: "4,000+",
-        phone: "Contact via hospital",
-        specs: [
-          "NICU MGPS Setup",
-          "Neonatal Care Infrastructure",
-          "Medical Gas Outlets",
-          "Monitoring Systems",
-        ],
-        logo: "/assets/clients/vivek-memorial.png",
-        established: "Quality healthcare center",
-        beds: "NICU facility",
-      },
-      {
-        id: 8,
-        name: "Nakshatra Hospital",
-        location: "Indore",
-        category: "Multi-specialty Hospital",
-        workDone: "ICU - Intensive Care Unit",
-        address: "Main Location, Indore",
-        city: "Indore, Madhya Pradesh",
-        rating: 4.5,
-        reviews: "3,500+",
-        phone: "Contact via hospital",
-        specs: [
-          "ICU MGPS Infrastructure",
-          "Critical Care Gas Systems",
-          "Vacuum & Medical Air",
-          "Emergency Support Systems",
-        ],
-        logo: "/assets/clients/nakshatra.png",
-        established: "Advanced ICU facility",
-        beds: "Multi-bed ICU",
-      },
-      {
-        id: 9,
         name: "Care CHL Hospital",
         location: "Indore",
         category: "Multi-specialty Hospital",
@@ -210,12 +46,55 @@ const ClientsPage = () => {
           "Ward Gas Systems",
           "Specialized Medical Gas Supply",
         ],
-        logo: "/assets/clients/care-chl.png",
+        logo: "https://content3.jdmagicbox.com/comp/indore/g8/0731px731.x731.191015234402.g5g8/catalogue/dr-nikhilesh-pasari-a-b-road-lig-colony-indore-pulmonologists-doctors-frzzw6ndgb.jpg",
         established: "Leading cardiac care",
         beds: "Multi-specialty wards",
       },
+
       {
-        id: 10,
+        id: 2,
+        name: "Motherhood Hospital",
+        location: "Indore",
+        category: "Women & Child Care Hospital",
+        workDone: "PICU - Pediatric Intensive Care Unit",
+        address: "Plot No. 34-39, Mechanic Nagar, Scheme No. 54, Vijay Nagar",
+        city: "Indore, Madhya Pradesh 452010",
+        rating: 4.7,
+        reviews: "10,000+",
+        phone: "8494800092",
+        specs: [
+          "PICU MGPS Infrastructure",
+          "Level III NICU Setup",
+          "Pediatric Gas Systems",
+          "24/7 Critical Care Support",
+        ],
+        logo: "https://www.healthcareradius.in/cloud/2021/11/15/motherhoodpune.jpg",
+        established: "Premium maternity & childcare",
+        beds: "Multi-bed NICU facility",
+      },
+      {
+        id: 3,
+        name: "Sankara Eye Centre",
+        location: "Indore",
+        category: "Eye Care Hospital",
+        workDone: "MGPS Installation & Critical Care Infrastructure",
+        address: "Scheme No. 74C, Vijay Nagar Main Road, AB Road, Indore",
+        city: "Indore, Madhya Pradesh 452010",
+        rating: 4.8,
+        reviews: "17,000+",
+        phone: "0731-4744747",
+        specs: [
+          "Complete MGPS Design & Installation",
+          "Medical Gas Outlets",
+          "Alarm & Monitoring Systems",
+          "HTM 02-01 Compliant",
+        ],
+        logo: "https://content.jdmagicbox.com/v2/comp/bangalore/50/080p4313350/catalogue/sankara-eye-hospital-marathahalli-bangalore-eye-hospitals-t6wglig41w.jpg",
+        established: "Super specialty eye care facility",
+        beds: "Multi-specialty",
+      },
+      {
+        id: 4,
         name: "V One Hospital",
         location: "Indore",
         category: "Multi-specialty Hospital",
@@ -231,9 +110,138 @@ const ClientsPage = () => {
           "Medical Infrastructure",
           "Safety Compliance",
         ],
-        logo: "/assets/clients/v-one.png",
+        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfwTtYpp9XkF4NdE1evoC316E-Fkz0t1DqNw&s",
         established: "Modern day care facility",
         beds: "Day care beds",
+      },
+      {
+        id: 5,
+        name: "Vijay Lakshmi Hospital",
+        location: "Khargone",
+        category: "Multi-specialty Hospital",
+        workDone: "MGPS Installation & Modular OT",
+        address: "Main Road, Khargone",
+        city: "Khargone, Madhya Pradesh",
+        rating: 4.6,
+        reviews: "3,000+",
+        phone: "Contact via hospital",
+        specs: [
+          "Modular OT Setup",
+          "Complete MGPS Setup",
+          "Medical Air & Vacuum",
+          "Gas Manifold Systems",
+        ],
+        logo: "https://content3.jdmagicbox.com/comp/sanawad/q5/9999pxxxx.xxxx.111231111035.z6q5/catalogue/vijaylaxmi-hospital-and-research-centre-sanawad-sanawad-infertility-doctors-74uyy7bpzh.jpg",
+        established: "Leading hospital in Khargone",
+        beds: "Multi-specialty care",
+      },
+      {
+        id: 6,
+        name: "KD Hospital",
+        location: "Indore",
+        category: "Multi-specialty Hospital",
+        workDone: "MGPS & Critical Care Units",
+        address: "Multiple Locations in Indore",
+        city: "Indore, Madhya Pradesh",
+        rating: 4.5,
+        reviews: "5,000+",
+        phone: "Contact via hospital",
+        specs: [
+          "Medical Gas Pipeline Installation",
+          "Critical Care Support",
+          "Oxygen Supply Systems",
+          "Complete MGPS Infrastructure",
+        ],
+        logo: "https://content.jdmagicbox.com/comp/agra/s7/0562px562.x562.231209122609.f5s7/catalogue/a4pwjv4wfn259bb-7n20o9seqs.jpg",
+        established: "Trusted healthcare provider",
+        beds: "Multi-bed facility",
+      },
+
+      {
+        id: 7,
+        name: "Subhishi Hospital",
+        location: "Khargone",
+        category: "Multi-specialty Hospital",
+        workDone: "MGPS Infrastructure",
+        address: "Khargone District",
+        city: "Khargone, Madhya Pradesh",
+        rating: 4.4,
+        reviews: "2,500+",
+        phone: "Contact via hospital",
+        specs: [
+          "Medical Gas Pipeline",
+          "Oxygen & Nitrous Oxide Systems",
+          "Installation & Commissioning",
+          "Compliance Documentation",
+        ],
+        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWv5mciUtR9JUdiJax1myd3yNC_kLvkgrNMQ&s",
+        established: "Quality healthcare facility",
+        beds: "Multi-bed capacity",
+      },
+      {
+        id: 8,
+        name: "Metro Medicare Hospital",
+        location: "Burhanpur",
+        category: "Multi-specialty Hospital",
+        workDone: "MGPS Installation",
+        address: "Main Area, Burhanpur",
+        city: "Burhanpur, Madhya Pradesh",
+        rating: 4.5,
+        reviews: "2,000+",
+        phone: "Contact via hospital",
+        specs: [
+          "Medical Gas Pipeline Setup",
+          "Critical Care Infrastructure",
+          "Testing & Commissioning",
+          "HTM Standards Compliance",
+        ],
+        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ4ZL9uRH7N46afRR6pDywTRTczdc21-5t3w&s",
+        established: "Trusted medical center",
+        beds: "Multi-specialty",
+      },
+    ],
+    critical: [
+      {
+        id: 9,
+        name: "Vivek Memorial Hospital",
+        location: "Indore",
+        category: "Multi-specialty Hospital",
+        workDone: "NICU - Neonatal Intensive Care Unit",
+        address: "Main Location, Indore",
+        city: "Indore, Madhya Pradesh",
+        rating: 4.6,
+        reviews: "4,000+",
+        phone: "Contact via hospital",
+        specs: [
+          "NICU MGPS Setup",
+          "Neonatal Care Infrastructure",
+          "Medical Gas Outlets",
+          "Monitoring Systems",
+        ],
+        logo: "https://content.jdmagicbox.com/comp/indore/l7/0731px731.x731.220616185335.l1l7/catalogue/-d14cg5k56q.jpg",
+        established: "Quality healthcare center",
+        beds: "NICU facility",
+      },
+      {
+        id: 10,
+        name: "Nakshatra Hospital",
+        location: "Indore",
+        category: "Multi-specialty Hospital",
+        workDone: "ICU - Intensive Care Unit",
+        address: "Main Location, Indore",
+        city: "Indore, Madhya Pradesh",
+        rating: 4.5,
+        reviews: "3,500+",
+        phone: "Contact via hospital",
+        specs: [
+          "ICU MGPS Infrastructure",
+          "Critical Care Gas Systems",
+          "Vacuum & Medical Air",
+          "Emergency Support Systems",
+        ],
+        logo: "https://content3.jdmagicbox.com/v2/comp/indore/q4/0731px731.x731.170928085212.q4q4/catalogue/nakshatra-heart-and-multispeciality-hospital-ring-road-indore-cardiac-hospitals-rgu47rtbzv.jpg",
+        established: "Advanced ICU facility",
+        beds: "Multi-bed ICU",
       },
     ],
     government: [
@@ -254,7 +262,7 @@ const ClientsPage = () => {
           "Government Standards",
           "Multiple Project Sites",
         ],
-        logo: "/assets/clients/mp-govt.png",
+        logo: "https://content.jdmagicbox.com/v2/comp/indore/w4/0731px731.x731.240330114941.d4w4/catalogue/care-chl-hospitals-lig-colony-indore-hospitals-gcxlh59qqr.jpg",
         established: "Government healthcare initiative",
         beds: "Multiple facilities",
       },
@@ -271,10 +279,10 @@ const ClientsPage = () => {
     activeFilter === "all"
       ? allClients
       : activeFilter === "private"
-      ? clients.private
-      : activeFilter === "critical"
-      ? clients.critical
-      : clients.government;
+        ? clients.private
+        : activeFilter === "critical"
+          ? clients.critical
+          : clients.government;
 
   const stats = [
     { icon: Building2, number: "50+", label: "Clients Completed" },
@@ -286,7 +294,20 @@ const ClientsPage = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-800 to-cyan-700 text-white  py-6 md:py-10 overflow-hidden">
+      <section className="relative text-white py-6 md:py-10 min-h-[35vh] md:min-h-[45vh] overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url("https://i.pinimg.com/736x/85/4a/8f/854a8f04558eaba629a4132a6ef9731d.jpg")`,
+            filter: "brightness(0.75) contrast(1.1)",
+          }}
+        ></div>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/45"></div>
+
+        {/* Pattern Overlay (optional – same as tumhara) */}
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0"
@@ -296,25 +317,23 @@ const ClientsPage = () => {
           ></div>
         </div>
 
+        {/* Content */}
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-4">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
+            <div className="inline-flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full text-sm font-semibold border border-white/40 text-white shadow-lg">
               <Building2 className="w-4 h-4" />
               Our Clients
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-2xl">
               Trusted Healthcare Partners
             </h1>
 
-            <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white/95 max-w-3xl mx-auto drop-shadow-lg">
               Successfully delivered MGPS and critical care infrastructure
-              solutions 
+              solutions
             </p>
           </div>
-
-          {/* Stats */}
-          {/* <dic> */}
         </div>
       </section>
 
@@ -366,90 +385,83 @@ const ClientsPage = () => {
         </div>
       </section> */}
 
+      <section className="relative py-10 md:py-10 bg-gradient-to-r">
+        {/* Decorative blur circles */}
+        <div className="absolute -top-10 -left-10 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/20 rounded-full blur-3xl"></div>
+
+        <div className="container-custom relative z-10 text-center">
+          <div className="inline-flex items-center gap-3 bg-white/90 backdrop-blur px-6 py-3 rounded-full shadow-xl">
+            <span className="w-2.5 h-2.5 rounded-full bg-teal-600 animate-pulse"></span>
+            <h3 className="text-lg md:text-xl font-bold text-gray-900 tracking-wide">
+              Top Hospitals
+            </h3>
+          </div>
+
+          <p
+            className={`mt-3 text-sm md:text-base text-black/90 max-w-2xl mx-auto ${poppins.className}`}
+          >
+            Our trusted healthcare partners delivering world-class medical
+            infrastructure across Madhya Pradesh
+          </p>
+          <hr className="mt-4 mx-auto w-40 md:w-56 border-black/60" />
+        </div>
+      </section>
+
       {/* Clients Grid */}
       <section className="section bg-white">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredClients.map((project) => (
               <div
                 key={project.id}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden"
+                className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
               >
-                {/* Logo Section */}
-                <div className="h-32 bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-6 border-b border-gray-100">
-                  <div className="w-full h-full bg-white rounded-lg flex items-center justify-center">
-                    {/* Replace with actual logo */}
-                    <div className="text-center">
-                      <Building2 className="w-12 h-12 text-blue-600 mx-auto mb-2" />
-                      <p className="text-xs text-gray-500">Photos</p>
-                    </div>
+                {/* Image Section */}
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={
+                      project.logo ||
+                      "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200"
+                    }
+                    alt={project.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+                  {/* Category Badge */}
+                  <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-gray-900 shadow">
+                    {project.category}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6 space-y-4">
+                <div className="p-5 space-y-4">
                   {/* Header */}
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                       {project.name}
                     </h3>
-                    <p className="text-sm text-gray-500">{project.category}</p>
+                    <p className="text-xs text-gray-500">{project.city}</p>
                   </div>
-
-                  {/* Rating */}
-                  {/* <div className="flex items-center gap-2">
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`w-4 h-4 ${
-                            i < Math.floor(project.rating)
-                              ? "fill-yellow-400 text-yellow-400"
-                              : "text-gray-300"
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm font-semibold text-gray-700">
-                      {project.rating}
-                    </span>
-                    <span className="text-xs text-gray-500">
-                      ({project.reviews} reviews)
-                    </span>
-                  </div> */}
 
                   {/* Work Done */}
                   <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-                    <p className="text-xs text-blue-600 font-semibold mb-1">
-                      Work Completed:
+                    <p className="text-[11px] text-blue-600 font-semibold mb-1">
+                      Work Completed
                     </p>
                     <p className="text-sm font-bold text-gray-900">
                       {project.workDone}
                     </p>
                   </div>
 
-                  {/* Location */}
-                  {/* <div className="space-y-2">
-                    <div className="flex items-start gap-2">
-                      <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0 mt-2.5" />
-                      <div className=" text-gray-600">
-                        <p className="font-medium text-gray-900 text-sm">
-                          {project.address}
-                        </p>
-                        <p className="text-xs text-gray-500">{project.city}</p>
-                      </div>
-                    </div>
-
-                   
-                  </div> */}
-
                   {/* Specs */}
                   <div className="space-y-2 pt-2 border-t border-gray-100">
                     <p className="text-xs font-semibold text-gray-700 uppercase tracking-wide">
-                      Project Scope:
+                      Project Scope
                     </p>
                     <ul className="space-y-1.5">
-                      {project.specs.map((spec, index) => (
+                      {project.specs.slice(0, 3).map((spec, index) => (
                         <li
                           key={index}
                           className="flex items-start gap-2 text-xs text-gray-600"
@@ -461,14 +473,18 @@ const ClientsPage = () => {
                     </ul>
                   </div>
 
-                  {/* Badge */}
-                  <div className="flex items-center justify-between pt-2 border-t border-gray-100">
+                  {/* Footer */}
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-100">
                     <div className="flex items-center gap-2">
                       <Award className="w-4 h-4 text-blue-600" />
                       <span className="text-xs font-semibold text-blue-600">
                         HTM 02-01 Compliant
                       </span>
                     </div>
+
+                    <button className="text-xs font-semibold text-blue-600 hover:underline">
+                      View Details →
+                    </button>
                   </div>
                 </div>
               </div>
@@ -478,18 +494,29 @@ const ClientsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section bg-gradient-to-br from-blue-800 to-cyan-700 text-white">
-        <div className="container-custom">
+      <section className="relative text-white py-12 md:py-20 min-h-[35vh] overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url("https://i.pinimg.com/736x/ce/58/06/ce5806b3a7d3708de2b18c7da045d90e.jpg")`,
+            filter: "brightness(0.75) contrast(1.1)",
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/45"></div>
+
+        <div className="container-custom relative z-10 h-full flex items-center">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl">
               Want to See Your Hospital Here?
             </h2>
-            <p className="text-lg text-blue-100">
+
+            <p className="text-lg text-white/95 drop-shadow-lg">
               Join our growing list of satisfied healthcare partners across
               Madhya Pradesh
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link href="contact" className="btn-hero-solid-secondary">
+              <Link href="/contact" className="btn-hero-solid-secondary">
                 <Building2 className="w-5 h-5" />
                 Start Your Project
               </Link>

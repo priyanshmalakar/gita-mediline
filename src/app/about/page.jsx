@@ -69,52 +69,57 @@ const AboutPage = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-800 to-cyan-700 text-white py-6 md:py-10 overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}
-          ></div>
+     <section className="relative text-white py-6 md:py-10 overflow-hidden">
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: `url("https://i.pinimg.com/736x/67/02/0c/67020c22d1f36767cfd942b7c760a133.jpg")`,
+      filter: "brightness(0.75) contrast(1.1)",
+    }}
+  ></div>
+
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/45"></div>
+
+  {/* Content */}
+  <div className="container-custom relative z-10">
+    <div className="max-w-4xl mx-auto text-center space-y-6">
+      <div className="inline-flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full text-sm font-semibold border border-white/40 text-white shadow-lg">
+        <Building2 className="w-4 h-4" />
+        About Us
+      </div>
+
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-2xl">
+        About Gita Mediline Services
+      </h1>
+
+      <p className="text-base md:text-lg text-white/95 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+        Professionally managed healthcare infrastructure company specialising in
+        Medical Gas Pipeline Systems (MGPS) and Modular Operation Theatre (MOT)
+        solutions.
+      </p>
+
+      {/* Certifications */}
+      <div className="flex flex-wrap justify-center gap-3 pt-4">
+        <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
+          <Shield className="w-4 h-4" />
+          <span className="text-sm font-semibold">ISO 9001:2015</span>
         </div>
 
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-semibold border border-white/30">
-              <Building2 className="w-4 h-4" />
-              About Us
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-              About Gita Mediline Services
-            </h1>
-
-            <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              Professionally managed healthcare infrastructure company
-              specialising in Medical Gas Pipeline Systems (MGPS) and Modular
-              Operation Theatre (MOT) solutions
-            </p>
-
-            {/* Certifications */}
-            <div className="flex flex-wrap justify-center gap-3 pt-4">
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-lg border border-white/30">
-                <Shield className="w-4 h-4" />
-                <span className="text-sm font-semibold">ISO 9001:2015</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-lg border border-white/30">
-                <Award className="w-4 h-4" />
-                <span className="text-sm font-semibold">CE Certified</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-lg border border-white/30">
-                <CheckCircle className="w-4 h-4" />
-                <span className="text-sm font-semibold">HTM 02-01</span>
-              </div>
-            </div>
-          </div>
+        <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
+          <Award className="w-4 h-4" />
+          <span className="text-sm font-semibold">CE Certified</span>
         </div>
-      </section>
+
+        <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
+          <CheckCircle className="w-4 h-4" />
+          <span className="text-sm font-semibold">HTM 02-01</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Our Story Section */}
       <section className="section bg-white">
@@ -189,7 +194,8 @@ const AboutPage = () => {
       {/* Leadership Section */}
       <section className="section bg-gradient-to-br from-gray-50 to-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
+            {/* Header */}
             <div className="text-center mb-12 space-y-4">
               <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold">
                 <User className="w-4 h-4" />
@@ -200,48 +206,54 @@ const AboutPage = () => {
               </h2>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-200">
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-                {/* Profile Icon */}
-                <div className="flex-shrink-0">
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center shadow-xl">
-                    <User className="w-12 h-12 md:w-16 md:h-16 text-white" />
-                  </div>
+            {/* Card */}
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+              <div className="grid grid-cols-1 md:grid-cols-10">
+                {/* Left Image (30%) */}
+                <div className="md:col-span-3 relative h-64 md:h-auto">
+                  <img
+                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop"
+                    alt="Leader"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                 </div>
 
-                {/* Content */}
-                <div className="flex-1 text-center md:text-left space-y-4">
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-                      Mr. Mohit Singh Solanki
-                    </h3>
-                    <p className="text-lg text-blue-600 font-semibold mt-1">
-                      Proprietor
-                    </p>
-                  </div>
-
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3 justify-center md:justify-start">
-                      <Award className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-gray-700 font-medium">
-                        Certified Authorised Person (AP – MGPS, HTM 02-01)
-                      </span>
+                {/* Right Content (70%) */}
+                <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center">
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                        Mr. Mohit Singh Solanki
+                      </h3>
+                      <p className="text-lg text-blue-600 font-semibold mt-1">
+                        Proprietor
+                      </p>
                     </div>
 
-                    <div className="flex items-center gap-3 justify-center md:justify-start">
-                      <Briefcase className="w-5 h-5 text-green-600 flex-shrink-0" />
-                      <span className="text-gray-700">
-                        5+ Years Healthcare Infrastructure Experience
-                      </span>
-                    </div>
-                  </div>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-3">
+                        <Award className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                        <span className="text-gray-700 font-medium">
+                          Certified Authorised Person (AP – MGPS, HTM 02-01)
+                        </span>
+                      </div>
 
-                  <div className="bg-blue-50 rounded-lg p-4 mt-6">
-                    <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                      All MGPS clients are executed under Authorised Person
-                      supervision, ensuring compliance with recognised
-                      healthcare standards and best practices.
-                    </p>
+                      <div className="flex items-center gap-3">
+                        <Briefcase className="w-5 h-5 text-green-600 flex-shrink-0" />
+                        <span className="text-gray-700">
+                          5+ Years Healthcare Infrastructure Experience
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="bg-blue-50 rounded-lg p-4 mt-4 border-l-4 border-blue-600">
+                      <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                        All MGPS clients are executed under Authorised Person
+                        supervision, ensuring compliance with recognised
+                        healthcare standards and best practices.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -300,35 +312,54 @@ const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section bg-gradient-to-br from-blue-800 to-cyan-700 text-white">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Partner with GMS for Your Healthcare Infrastructure
-            </h2>
-            <p className="text-lg text-blue-100">
-              Experience the difference of working with certified professionals
-              who prioritize safety, compliance, and reliability
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Link
-                href="/contact"
-                className="btn-hero-solid-secondary"
-              >
-                <Building2 className="w-5 h-5" />
-                Contact Us
-              </Link>
-              <Link
-                href="/clients"
-                className="btn-outline"
-              >
-                <CheckCircle className="w-5 h-5" />
-                View Our Clients
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="relative text-white py-6 md:py-10 overflow-hidden">
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: `url("https://i.pinimg.com/736x/a2/eb/4a/a2eb4a57014571d9bd3c148fee96ffb3.jpg")`,
+      filter: "brightness(0.9) contrast(1.2)",
+    }}
+  ></div>
+
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/45"></div>
+
+  {/* Content */}
+  <div className="container-custom relative z-10">
+    <div className="max-w-3xl mx-auto text-center space-y-6">
+      {/* Tag */}
+      <div className="inline-flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full text-sm font-semibold border border-white/40 text-white shadow-lg">
+        <Building2 className="w-4 h-4" />
+        Partner With Us
+      </div>
+
+      {/* Heading */}
+      <h2 className="text-3xl md:text-4xl font-bold text-white drop-shadow-2xl">
+        Partner with GMS for Your Healthcare Infrastructure
+      </h2>
+
+      {/* Paragraph */}
+      <p className="text-base md:text-lg text-white/95 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+        Experience the difference of working with certified professionals who
+        prioritize safety, compliance, and reliability.
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+        <Link href="/contact" className="btn-hero-solid-secondary">
+          <Building2 className="w-5 h-5" />
+          Contact Us
+        </Link>
+        <Link href="/clients" className="btn-outline">
+          <CheckCircle className="w-5 h-5" />
+          View Our Clients
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };
