@@ -55,7 +55,7 @@ const FAQ = () => {
 
   return (
     <div className="bg-white">
-      <section className="relative bg-gradient-to-br from-blue-800 to-cyan-700 text-white  py-6 md:py-10 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#005B77] to-[#003d52] text-white  py-6 md:py-10 overflow-hidden">
         {/* Header */}
         <div className="absolute inset-0 opacity-10">
           <div

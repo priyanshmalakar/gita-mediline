@@ -138,7 +138,7 @@ const ContactPage = () => {
   return (
     <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-800 to-cyan-700 text-white py-6 md:py-10 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#005B77] to-[#003d52] text-white py-6 md:py-10 overflow-hidden">
         <div className="absolute inset-0 ">
           <div
              className="absolute inset-0 bg-cover bg-center bg-no-repeat"

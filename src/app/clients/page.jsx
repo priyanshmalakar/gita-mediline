@@ -324,7 +324,7 @@ const ClientsPage = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-white overflow-hidden">
       {/* Hero Section */}
       <section className="relative text-white py-6 md:py-10 min-h-[35vh] md:min-h-[45vh] overflow-hidden">
         {/* Background Image */}
@@ -466,7 +466,7 @@ const ClientsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative text-white py-12 md:py-20 min-h-[35vh] overflow-hidden mb-4">
+      <section className="relative text-white py-8 md:py-10 min-h-[35vh] overflow-hidden ">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{

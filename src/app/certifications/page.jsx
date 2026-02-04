@@ -15,16 +15,24 @@ import Link from "next/link";
 export default function CertificationPage() {
   const [activeCert, setActiveCert] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
+    const checkMobile = () => {
+      setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const certifications = [
     {
       id: 1,
       name: "CE Certificate",
-      description: "European Conformity certification for medical equipment compliance",
+      description:
+        "European Conformity certification for medical equipment compliance",
       image: "/certificates/CEMarking.pdf",
       type: "pdf",
       icon: Shield,
@@ -36,7 +44,8 @@ export default function CertificationPage() {
     {
       id: 2,
       name: "ISO 9001:2015",
-      description: "Quality Management System certification for healthcare infrastructure",
+      description:
+        "Quality Management System certification for healthcare infrastructure",
       image: "/certificates/Iso9001_2015.pdf",
       type: "pdf",
       icon: Award,
@@ -48,7 +57,8 @@ export default function CertificationPage() {
     {
       id: 3,
       name: "HTM 02-01 Authorised Person",
-      description: "MGPS Certified Authorised Person for Medical Gas Pipeline Systems",
+      description:
+        "MGPS Certified Authorised Person for Medical Gas Pipeline Systems",
       image: "/certificates/HTM 0201_authorised_person_mgps_certified.pdf",
       type: "pdf",
       icon: CheckCircle,
@@ -78,7 +88,9 @@ export default function CertificationPage() {
         (e.ctrlKey && ["s", "p", "u"].includes(e.key.toLowerCase())) ||
         (e.metaKey && ["s", "p", "u"].includes(e.key.toLowerCase())) ||
         e.key === "F12" ||
-        (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(e.key.toLowerCase()))
+        (e.ctrlKey &&
+          e.shiftKey &&
+          ["i", "j", "c"].includes(e.key.toLowerCase()))
       ) {
         e.preventDefault();
         e.stopPropagation();
@@ -142,7 +154,10 @@ export default function CertificationPage() {
   }, [activeCert]);
 
   return (
-    <div className="bg-white select-none" onContextMenu={(e) => e.preventDefault()}>
+    <div
+      className="bg-white select-none"
+      onContextMenu={(e) => e.preventDefault()}
+    >
       {/* Hero Section - Matching About Page Style */}
       <section className="relative text-white py-6 md:py-10 overflow-hidden">
         {/* Background Image */}
@@ -166,10 +181,9 @@ export default function CertificationPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-2xl">
-            Certified Excellence
+              Certified Excellence
             </h1>
 
-        
             {/* Certifications Badges */}
             <div className="flex flex-wrap justify-center gap-3 pt-4">
               <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
@@ -259,7 +273,9 @@ export default function CertificationPage() {
 
                       {/* Floating Badge */}
                       <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg">
-                        <span className={`text-xs font-bold ${cert.accentColor}`}>
+                        <span
+                          className={`text-xs font-bold ${cert.accentColor}`}
+                        >
                           VERIFIED
                         </span>
                       </div>
@@ -294,7 +310,7 @@ export default function CertificationPage() {
       </section>
 
       {/* Why Certifications Matter Section */}
-      <section className="section bg-white py-20">
+      <section className="section bg-white py-10">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12 space-y-4">
@@ -302,8 +318,8 @@ export default function CertificationPage() {
                 Why Our Certifications Matter
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Industry-recognized credentials that ensure safety, quality,
-                and compliance
+                Industry-recognized credentials that ensure safety, quality, and
+                compliance
               </p>
             </div>
 
@@ -429,7 +445,7 @@ export default function CertificationPage() {
                 })}
                 <span className="font-bold text-lg">{activeCert.name}</span>
               </div>
-              
+
               <button
                 onClick={() => setActiveCert(null)}
                 className="text-white hover:text-gray-300 transition-all duration-200 hover:scale-110 bg-white/10 backdrop-blur-md p-2 rounded-full border border-white/20"
@@ -453,7 +469,7 @@ export default function CertificationPage() {
                   GITA MEDILINE
                 </span>
               </div>
-              
+
               <div className="absolute bottom-1/4 right-10 pointer-events-none select-none z-30">
                 <span className="text-4xl md:text-5xl font-black text-[#44AB7E]/[0.06] rotate-[15deg] inline-block drop-shadow-sm">
                   GITA MEDILINE
@@ -462,7 +478,7 @@ export default function CertificationPage() {
 
               {/* PDF Viewer - Scrollable with Protected Overlay */}
               {activeCert.type === "pdf" ? (
-                <div 
+                <div
                   className="w-full min-h-full relative"
                   onContextMenu={(e) => {
                     e.preventDefault();
@@ -470,21 +486,44 @@ export default function CertificationPage() {
                     return false;
                   }}
                 >
-                  {/* PDF Container with scroll */}
                   <div className="w-full h-full overflow-auto p-4">
-                    <iframe
-                      src={`${activeCert.image}#toolbar=0&navpanes=0&scrollbar=0`}
-                      className="w-full border-0 pointer-events-none"
-                      style={{
-                        height: '150vh',
-                        minHeight: '150vh'
-                      }}
-                      title={activeCert.name}
-                    />
+                    {isMobile ? (
+                      // Mobile: Use object tag as fallback
+                      <object
+                        data={activeCert.image}
+                        type="application/pdf"
+                        className="w-full border-0"
+                        style={{
+                          height: "150vh",
+                          minHeight: "150vh",
+                        }}
+                      >
+                        <embed
+                          src={`https://docs.google.com/viewer?url=${encodeURIComponent(
+                            window.location.origin + activeCert.image
+                          )}&embedded=true`}
+                          className="w-full border-0"
+                          style={{
+                            height: "150vh",
+                            minHeight: "150vh",
+                          }}
+                        />
+                      </object>
+                    ) : (
+                      <iframe
+                        src={`${activeCert.image}#toolbar=0&navpanes=0&scrollbar=0`}
+                        className="w-full border-0 pointer-events-none"
+                        style={{
+                          height: "150vh",
+                          minHeight: "150vh",
+                        }}
+                        title={activeCert.name}
+                      />
+                    )}
                   </div>
 
                   {/* Transparent Protection Layer - Blocks Right Click but allows wheel scroll */}
-                  <div 
+                  <div
                     className="absolute inset-0 z-10"
                     onContextMenu={(e) => {
                       e.preventDefault();
@@ -500,12 +539,12 @@ export default function CertificationPage() {
                       }
                     }}
                     style={{
-                      background: 'transparent',
-                      userSelect: 'none',
-                      WebkitUserSelect: 'none',
-                      MozUserSelect: 'none',
-                      msUserSelect: 'none',
-                      cursor: 'default'
+                      background: "transparent",
+                      userSelect: "none",
+                      WebkitUserSelect: "none",
+                      MozUserSelect: "none",
+                      msUserSelect: "none",
+                      cursor: "default",
                     }}
                   />
                 </div>
@@ -530,7 +569,9 @@ export default function CertificationPage() {
             <div className="bg-gradient-to-r from-gray-900 to-gray-800 px-6 py-3 rounded-b-2xl mt-0">
               <div className="flex items-center justify-center text-sm text-gray-300">
                 <Shield className="w-4 h-4 mr-2" />
-                <span className="font-semibold">Certified & Verified Document</span>
+                <span className="font-semibold">
+                  Certified & Verified Document
+                </span>
               </div>
             </div>
           </div>

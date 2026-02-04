@@ -102,7 +102,7 @@ const ServicesPage = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-800 to-cyan-700 text-white py-6 md:py-10 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#005B77] to-[#003d52] text-white py-6 md:py-10 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -391,7 +391,7 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="section bg-gradient-to-br from-blue-800 to-cyan-700 text-white">
+      <section className="section bg-gradient-to-br from-[#005B77] to-[#003d52] text-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-3xl md:text-4xl font-bold text-white">
