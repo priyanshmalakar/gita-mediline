@@ -211,7 +211,7 @@ const AboutPage = () => {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
               <div className="grid grid-cols-1 md:grid-cols-10">
                 {/* Left Image (30%) */}
-                <div className="md:col-span-3 relative h-64 md:h-auto">
+                <div className="md:col-span-3 relative h-auto">
                   <img
                     src={leaderImage.src}
                     alt="Leader"

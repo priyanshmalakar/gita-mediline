@@ -456,9 +456,7 @@ const ClientsPage = () => {
                       </span>
                     </div>
 
-                    <button className="text-xs font-semibold text-blue-600 hover:underline">
-                      View Details →
-                    </button>
+                  
                   </div>
                 </div>
               </div>

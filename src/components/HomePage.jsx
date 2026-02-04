@@ -191,7 +191,7 @@ const HomePage = () => {
               </div>
 
               {/* CTA Button - Mobile Centered */}
-              <div className="pt-2 md:pt-1 text-center lg:text-left">
+              <div className="py-4 md:pt-1 text-center lg:text-left">
                 <Link
                   href="/clients"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-[#005B77] to-[#44AB7E] text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm md:text-base"
