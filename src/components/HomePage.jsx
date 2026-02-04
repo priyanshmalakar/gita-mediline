@@ -116,7 +116,7 @@ const HomePage = () => {
   return (
     <div className="bg-white">
       {/* About Section - Mobile Optimized Version */}
-      <section className="section bg-white relative overflow-hidden">
+      <section className=" bg-white relative overflow-hidden">
         {/* Decorative Background Elements */}
         <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-[#005B77]/5 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 md:w-72 md:h-72 bg-[#44AB7E]/5 rounded-full translate-y-1/2 -translate-x-1/2 opacity-50"></div>
@@ -214,8 +214,6 @@ const HomePage = () => {
                       className="w-full h-full object-contain px-4 md:px-0"
                     />
                   </div>
-                 
-               
                 </div>
               </div>
             </div>
@@ -361,7 +359,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      <OurClients/>
+      <OurClients />
       {/* Why Choose Us Section */}
       <section className="section bg-gradient-to-br from-[#005B77] to-[#44AB7E] text-white relative overflow-hidden">
         {/* Background Pattern */}

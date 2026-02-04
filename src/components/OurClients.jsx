@@ -7,11 +7,18 @@ import {
   Quote,
   Play,
   Building2,
+  X,
 } from "lucide-react";
+import vivekHospital from "../assets/clientBanner/vivekHospital.jpeg";
+import motherHood from "../assets/clientBanner/motherhood.jpeg";
+import metroMedicare from "../assets/clientBanner/metroHospital.jpeg";
+import sankareye from "../assets/clientBanner/sankareye.jpeg";
 
 const OurClients = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [currentVideoUrl, setCurrentVideoUrl] = useState("");
 
   const clients = [
     {
@@ -20,7 +27,7 @@ const OurClients = () => {
       location: "Indore, Madhya Pradesh",
       testimonial:
         "The MGPS installation by Gita Mediline Services was exceptional. Professional team, quality work, and complete HTM compliance. Highly recommended for healthcare infrastructure.",
-      image: "/assets/clients/sankara-eye-person.jpg", // Replace with actual image
+      image: sankareye,
       type: "image",
       category: "Eye Care Hospital",
     },
@@ -30,7 +37,7 @@ const OurClients = () => {
       location: "Indore, Madhya Pradesh",
       testimonial:
         "Outstanding work on our PICU setup. The team understood our critical care requirements perfectly and delivered beyond expectations. Their expertise in pediatric care infrastructure is commendable.",
-      image: "/assets/clients/motherhood-person.jpg",
+      image: motherHood,
       type: "image",
       category: "Women & Child Care",
     },
@@ -40,7 +47,7 @@ const OurClients = () => {
       location: "Indore, Madhya Pradesh",
       testimonial:
         "Excellent work on our Cath Lab and Day Care infrastructure. The medical gas systems are working flawlessly. GMS is our trusted partner for all MGPS needs.",
-      videoUrl: "/assets/clients/care-chl-video.mp4", // Replace with actual video
+      videoUrl: "https://www.youtube.com/embed/vcZZ53oEHL0?si=zdDSZOVih9NLhPqC",
       thumbnail: "/assets/clients/care-chl-thumb.jpg",
       type: "video",
       category: "Cardiac Care Specialist",
@@ -51,28 +58,41 @@ const OurClients = () => {
       location: "Khargone, Madhya Pradesh",
       testimonial:
         "Gita Mediline Services completed our Modular OT and complete MGPS setup with precision. The quality of work and adherence to safety standards is outstanding.",
-      image: "/assets/clients/vijay-lakshmi-person.jpg",
-      type: "image",
+      videoUrl: "https://www.youtube.com/embed/0b9NMCbO8pg?si=V9S2Kkr6ijaghWEZ",
+      thumbnail: "/assets/clients/vijay-lakshmi-thumb.jpg",
+      type: "video",
       category: "Multi-specialty Hospital",
     },
     {
       id: 5,
-      name: "District Hospital",
-      location: "Madhya Pradesh",
+      name: "Vivek Memorial Hospital",
+      location: "Indore, Madhya Pradesh",
       testimonial:
-        "Professional execution of MGPS installation across multiple government facilities. Their understanding of HTM standards and compliance requirements is excellent.",
-      videoUrl: "/assets/clients/govt-hospital-video.mp4",
-      thumbnail: "/assets/clients/govt-thumb.jpg",
-      type: "video",
-      category: "Government Healthcare",
+        "Professional execution of NICU MGPS installation. The team's understanding of neonatal care requirements and their commitment to quality is impressive.",
+      videoUrl: "https://www.youtube.com/embed/AB43gBw_Cmw?si=LC-O8Nybb5hFU6Js",
+      thumbnail: "/assets/clients/vivek-thumb.jpg",
+      image : vivekHospital,
+      type: "image",
+      category: "Multi-specialty Hospital",
     },
     {
       id: 6,
+      name: "Nakshatra Hospital",
+      location: "Indore, Madhya Pradesh",
+      testimonial:
+        "Complete satisfaction with the ICU MGPS infrastructure setup. The team's expertise in critical care medical gas systems and their commitment to quality is excellent.",
+      videoUrl: "https://www.youtube.com/embed/0b9NMCbO8pg?si=V9S2Kkr6ijaghWEZ",
+      thumbnail: "/assets/clients/nakshatra-thumb.jpg",
+      type: "video",
+      category: "Multi-specialty Hospital",
+    },
+    {
+      id: 7,
       name: "Metro Medicare Hospital",
       location: "Burhanpur, Madhya Pradesh",
       testimonial:
         "Complete satisfaction with the MGPS infrastructure setup. The team's expertise in medical gas systems and their commitment to quality is impressive.",
-      image: "/assets/clients/metro-medicare-person.jpg",
+      image: metroMedicare,
       type: "image",
       category: "Multi-specialty Hospital",
     },
@@ -86,13 +106,24 @@ const OurClients = () => {
     setCurrentSlide((prev) => (prev - 1 + clients.length) % clients.length);
   };
 
+  const openVideoModal = (videoUrl) => {
+    setCurrentVideoUrl(videoUrl);
+    setIsVideoModalOpen(true);
+    setIsAutoPlaying(false);
+  };
+
+  const closeVideoModal = () => {
+    setIsVideoModalOpen(false);
+    setCurrentVideoUrl("");
+  };
+
   // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
       nextSlide();
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, currentSlide]);
@@ -168,35 +199,44 @@ const OurClients = () => {
                     <div className="relative h-48 md:h-56 bg-gradient-to-br from-[#005B77]/10 to-[#44AB7E]/10 flex items-center justify-center overflow-hidden">
                       {client.type === "image" ? (
                         <div className="relative w-full h-full">
-                          {/* Replace with actual image */}
+                          {/* Image placeholder - replace with actual images */}
                           <div className="absolute inset-0 flex items-center justify-center">
                             <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-[#005B77] to-[#44AB7E] flex items-center justify-center shadow-xl">
                               <Building2 className="w-12 h-12 md:w-16 md:h-16 text-white" />
                             </div>
                           </div>
-                          {/* When you have actual images, replace the div above with: */}
-                          {/* <img
-                            src={client.image}
+                          {/* When you have actual images, uncomment and use: */}
+                          <img
+                            src={client.image.src}
                             alt={client.name}
                             className="w-full h-full object-cover"
-                          /> */}
+                          />
                         </div>
                       ) : (
-                        <div className="relative w-full h-full group cursor-pointer">
-                          {/* Video Thumbnail */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-[#005B77]/20 to-[#44AB7E]/20"></div>
-                          {/* When you have actual video, replace with: */}
-                          {/* <img
-                            src={client.thumbnail}
-                            alt={client.name}
+                        <div
+                          className="relative w-full h-full group cursor-pointer"
+                          onClick={() => openVideoModal(client.videoUrl)}
+                        >
+                          {/* YouTube Video Thumbnail */}
+                          <img
+                            src={`https://img.youtube.com/vi/${client.videoUrl.split('/embed/')[1].split('?')[0]}/maxresdefault.jpg`}
+                            alt={`${client.name} video thumbnail`}
                             className="w-full h-full object-cover"
-                          /> */}
+                            onError={(e) => {
+                              // Fallback to medium quality if maxresdefault doesn't exist
+                              e.target.src = `https://img.youtube.com/vi/${client.videoUrl.split('/embed/')[1].split('?')[0]}/mqdefault.jpg`;
+                            }}
+                          />
+                          {/* Dark overlay on hover */}
+                          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                          {/* Play button */}
                           <div className="absolute inset-0 flex items-center justify-center">
                             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
                               <Play className="w-8 h-8 md:w-10 md:h-10 text-[#005B77] ml-1" />
                             </div>
                           </div>
-                          <div className="absolute top-3 right-3 bg-[#44AB7E] text-white text-xs font-bold px-3 py-1 rounded-full">
+                          {/* Video badge */}
+                          <div className="absolute top-3 right-3 bg-[#44AB7E] text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                             Video
                           </div>
                         </div>
@@ -292,6 +332,38 @@ const OurClients = () => {
           </button>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {isVideoModalOpen && (
+        <div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={closeVideoModal}
+        >
+          <div
+            className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeVideoModal}
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-colors shadow-lg"
+              aria-label="Close video"
+            >
+              <X className="w-6 h-6 text-gray-900" />
+            </button>
+            <iframe
+              width="100%"
+              height="100%"
+              src={currentVideoUrl}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

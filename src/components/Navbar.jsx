@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown, Phone, Mail, MapPin } from "lucide-react";
-
+import logo from '../assets/logos/logo.png'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -102,19 +102,20 @@ export default function Navbar() {
             : "bg-white/95 backdrop-blur-sm lg:top-10"
         } top-8 lg:top-0`}
       >
-        <div className="container-custom">
-          <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="px-2">
+          <div className="flex justify-between items-center h-14 lg:h-16">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="flex items-center gap-2">
-                <div className="flex flex-col">
+              <Link href="/" className="flex items-center ">
+                {/* <div className="flex flex-col">
                   <span className="text-xl lg:text-2xl font-bold gradient-text">
                     GITA MEDILINE
                   </span>
                   <span className="text-[10px] lg:text-xs text-gray-600 font-medium tracking-wider">
                     SERVICES
                   </span>
-                </div>
+                </div> */}
+                <img src={logo.src} alt="Gita Mediline Logo" className="w-48 md:w-60 h-auto py-4 px-2" />
               </Link>
             </div>
 
@@ -271,7 +272,7 @@ export default function Navbar() {
               className="block w-full mt-4 btn-primary text-center  items-center justify-center gap-2 shadow-lg"
               onClick={() => setIsOpen(false)}
             >
-              <Phone className="w-4 h-4" />
+              {/* <Phone className="w-4 h-4" /> */}
               Call Now
             </a>
           </div>
@@ -279,7 +280,7 @@ export default function Navbar() {
       </nav>
 
       {/* Spacer for fixed navbar on mobile */}
-      <div className="h-24 lg:h-22" />
+      <div className="h-22 lg:h-20" />
     </>
   );
 }

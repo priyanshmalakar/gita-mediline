@@ -97,7 +97,7 @@ const Footer = () => {
                   SERVICES
                 </p>
                 <p className="text-[#44AB7E] italic text-sm mt-1">
-                  Life Support Systems...
+                  Powering Hospital Lifelines...
                 </p>
               </div>
 

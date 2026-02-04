@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import aboutBanner from "../../assets/bg-banner/aboutBanner.jpg";
+import leaderImage from "../../assets/logos/profileimage.jpeg";
 const AboutPage = () => {
   const philosophyPoints = [
     {
@@ -212,7 +213,7 @@ const AboutPage = () => {
                 {/* Left Image (30%) */}
                 <div className="md:col-span-3 relative h-64 md:h-auto">
                   <img
-                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format&fit=crop"
+                    src={leaderImage.src}
                     alt="Leader"
                     className="w-full h-full object-cover"
                   />

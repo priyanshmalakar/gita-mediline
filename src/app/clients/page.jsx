@@ -468,7 +468,7 @@ const ClientsPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="relative text-white py-12 md:py-20 min-h-[35vh] overflow-hidden">
+      <section className="relative text-white py-12 md:py-20 min-h-[35vh] overflow-hidden mb-4">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{

@@ -24,7 +24,7 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const images = [
-    banner1.src,
+    // banner1.src,
     // banner3.src,
     banner4.src,
     banner5.src,
@@ -106,7 +106,7 @@ const Hero = () => {
                   <span className="block mt-1">SERVICES</span>
                 </h1>
                 <p className="text-lg sm:text-xl md:text-2xl text-yellow-300 font-semibold italic">
-                  Life Support Systems...
+                  Powering Hospital Lifelines...
                 </p>
               </div>
 
