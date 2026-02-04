@@ -121,7 +121,7 @@ const HomePage = () => {
         <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-[#005B77]/5 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50"></div>
         <div className="absolute bottom-0 left-0 w-48 h-48 md:w-72 md:h-72 bg-[#44AB7E]/5 rounded-full translate-y-1/2 -translate-x-1/2 opacity-50"></div>
 
-        <div className="container-custom relative z-10">
+        <div className="container-custom relative z-10 py-6">
           {/* Section Header - Optimized for Mobile */}
           <div className="text-center max-w-3xl mx-auto  space-y-3 md:space-y-2 px-2">
             <div className="inline-flex items-center gap-2 bg-[#44AB7E]/10 text-[#005B77] px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold">
