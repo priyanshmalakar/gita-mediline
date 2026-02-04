@@ -115,7 +115,7 @@ export default function Navbar() {
                     SERVICES
                   </span>
                 </div> */}
-                <img src={logo.src} alt="Gita Mediline Logo" className="w-48 md:w-60 h-auto py-4 px-2" />
+                <img src={logo.src} alt="Gita Mediline Logo" className="w-48 md:w-58 h-auto py-4 px-2" />
               </Link>
             </div>
 
