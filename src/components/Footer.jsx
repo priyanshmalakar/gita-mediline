@@ -15,7 +15,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
-import logo from '../assets/logos/logo.png'
+import logo from "../assets/logos/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
