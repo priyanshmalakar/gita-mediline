@@ -15,6 +15,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
+import logo from '../assets/logos/logo.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -74,7 +75,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-gray-800 via-gray-800 to-gray-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -87,19 +88,25 @@ const Footer = () => {
 
       <div className="container-custom relative z-10">
         {/* Main Footer Content */}
-        <div className="py-6 md:py-10">
+        <div className="py-4 md:py-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="space-y-3">
-              <div>
-                <h3 className="text-xl font-bold">GITA MEDILINE</h3>
-                <p className="text-xs text-gray-400 font-medium tracking-wider">
-                  SERVICES
-                </p>
-                <p className="text-[#44AB7E] italic text-sm mt-1">
-                  Powering Hospital Lifelines...
-                </p>
-              </div>
+              <Link href="/" className="flex items-center ">
+                {/* <div className="flex flex-col">
+                  <span className="text-xl lg:text-2xl font-bold gradient-text">
+                    GITA MEDILINE
+                  </span>
+                  <span className="text-[10px] lg:text-xs text-gray-600 font-medium tracking-wider">
+                    SERVICES
+                  </span>
+                </div> */}
+                <img
+                  src={logo.src}
+                  alt="Gita Mediline Logo"
+                  className="w-40 md:w-52 h-auto "
+                />
+              </Link>
 
               <p className="text-gray-300 text-sm leading-relaxed">
                 Healthcare infrastructure specialists providing MGPS and Modular

@@ -5,6 +5,7 @@ import ServiceAvailabilityBar from "@/components/ServiceAvailabilityBar";
 import Footer from "@/components/Footer";
 import ScreenProtection from "@/components/ScreenProtection";
 import { Toaster } from "react-hot-toast";
+import WhatsappIcon from "@/components/WhatsappIcon";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -67,6 +68,7 @@ export default function RootLayout({ children }) {
         {/* <ServiceAvailabilityBar /> */}
         {children}
         <Footer />
+        <WhatsappIcon/>
       </body>
     </html>
   );
