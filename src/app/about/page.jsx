@@ -172,7 +172,7 @@ const AboutPage = () => {
             </div>
 
             {/* Values Cards */}
-            <div className="grid md:grid-cols-3 gap-6 mt-12">
+            {/* <div className="grid md:grid-cols-3 gap-6 mt-12">
               {values.map((value, index) => (
                 <div
                   key={index}
@@ -187,7 +187,7 @@ const AboutPage = () => {
                   <p className="text-sm text-gray-600">{value.description}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
