@@ -170,6 +170,12 @@ const HomePage = () => {
 
               {/* Certifications Badges - Mobile Optimized */}
               <div className="flex flex-wrap gap-2 md:gap-3">
+                 <div className="flex items-center gap-1.5 md:gap-2 bg-[#005B77]/10 text-[#005B77] px-3 py-1.5 md:px-4 md:py-2 rounded-lg border border-[#005B77]/20 text-xs md:text-sm">
+                  <CheckCircle className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
+                  <span className="font-semibold whitespace-nowrap">
+                    HTM 02-01
+                  </span>
+                </div>
                 <div className="flex items-center gap-1.5 md:gap-2 bg-[#005B77]/10 text-[#005B77] px-3 py-1.5 md:px-4 md:py-2 rounded-lg border border-[#005B77]/20 text-xs md:text-sm">
                   <Shield className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
                   <span className="font-semibold whitespace-nowrap">
@@ -182,12 +188,7 @@ const HomePage = () => {
                     CE Certified
                   </span>
                 </div>
-                <div className="flex items-center gap-1.5 md:gap-2 bg-[#005B77]/10 text-[#005B77] px-3 py-1.5 md:px-4 md:py-2 rounded-lg border border-[#005B77]/20 text-xs md:text-sm">
-                  <CheckCircle className="w-3 h-3 md:w-4 md:h-4 flex-shrink-0" />
-                  <span className="font-semibold whitespace-nowrap">
-                    HTM 02-01
-                  </span>
-                </div>
+               
               </div>
 
               {/* CTA Button - Mobile Centered */}
@@ -336,7 +337,7 @@ const HomePage = () => {
           </div>
 
           {/* Bottom Stats Bar */}
-          <div className="mt-12 bg-gradient-to-r from-[#005B77] to-[#44AB7E] rounded-2xl p-6 md:p-8">
+          <div className="hidden md:block mt-12 bg-gradient-to-r from-[#005B77] to-[#44AB7E] rounded-2xl p-6 md:p-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
               <div>
                 <div className="text-3xl md:text-4xl font-bold mb-1">5+</div>

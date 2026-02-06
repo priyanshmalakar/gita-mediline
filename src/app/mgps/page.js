@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useState, useEffect } from "react";
 import {
   Activity,
   Shield,
@@ -17,7 +17,11 @@ import {
   Layout,
 } from "lucide-react";
 import Link from "next/link";
-
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import mgps from "../../assets/bg-banner/mgps.jpeg";
+import banner from "../../assets/banner/banner.png";
+import standard from "../../assets/componentBanner/standard.png"
 const MGPSPage = () => {
   const scopeOfWork = [
     "MGPS system design & engineering layouts",
@@ -29,6 +33,22 @@ const MGPSPage = () => {
     "Pressure testing, purging & commissioning",
     "As-built drawings & compliance documentation",
   ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + carouselImages.length) % carouselImages.length
+    );
+  };
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 2000);
+    return () => clearInterval(timer);
+  }, []);
 
   const medicalGases = [
     { name: "Oxygen (O₂)", icon: Activity },
@@ -39,18 +59,27 @@ const MGPSPage = () => {
     { name: "Carbon Dioxide (CO₂)", icon: Zap },
   ];
 
+  const carouselImages = [
+    "/carousalImages/service1.jpeg",
+    "/carousalImages/service2.jpeg",
+    "/carousalImages/service3.jpeg",
+    "/carousalImages/service4.jpeg",
+  ];
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-[#005B77] to-[#003d52] text-white py-12 md:py-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 ">
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+              backgroundImage: `url(${mgps.src})`,
+              filter: "brightness(0.75) contrast(1.1)",
             }}
           ></div>
         </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/45"></div>
 
         <div className="container-custom relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
@@ -66,7 +95,6 @@ const MGPSPage = () => {
             <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto">
               Safe. Compliant. Life-Critical Infrastructure.
             </p>
-
           </div>
         </div>
       </section>
@@ -108,18 +136,13 @@ const MGPSPage = () => {
               </div>
 
               {/* Right: Image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <div className="aspect-[4/3] bg-gradient-to-br from-blue-100 to-cyan-100 relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-gray-400">
-                      <Activity className="w-16 h-16 mx-auto mb-3 opacity-30" />
-                      <p className="font-semibold">MGPS Pipeline System</p>
-                      <p className="text-sm">Medical-grade installation</p>
-                    </div>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-bold text-blue-600 shadow-lg">
-                    HTM 02-01 Compliant
-                  </div>
+              <div className="w-full">
+                <div className="  relative">
+                  <img
+                    src={banner.src}
+                    alt="Leader"
+                    className="w-[90%] h-full "
+                  />
                 </div>
               </div>
             </div>
@@ -132,39 +155,58 @@ const MGPSPage = () => {
         <div className="container-custom">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Left: Image */}
-              <div className="order-2 lg:order-1">
-                <div className="grid grid-cols-2 gap-4">
-                  {/* Large Image */}
-                  <div className="col-span-2 relative rounded-xl overflow-hidden shadow-lg">
-                    <div className="aspect-[16/9] bg-gradient-to-br from-teal-100 to-emerald-100">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-center text-gray-400">
-                          <Wrench className="w-12 h-12 mx-auto mb-2 opacity-30" />
-                          <p className="text-sm font-semibold">
-                            Pipeline Installation
-                          </p>
-                        </div>
+              <div className="order-2 lg:order-1 relative">
+                {/* Carousel Container */}
+                <div className="relative overflow-hidden rounded-lg shadow-lg">
+                  {/* Images */}
+                  <div
+                    className="flex transition-transform duration-500 ease-out"
+                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                  >
+                    {carouselImages.map((image, index) => (
+                      <div key={index} className="min-w-full">
+                        <Image
+                          src={image}
+                          alt={`Service ${index + 1}`}
+                          width={600}
+                          height={400}
+                          className="w-full h-[300px] md-h-[400px] object-cover"
+                          priority={index === 0}
+                        />
                       </div>
-                    </div>
+                    ))}
                   </div>
 
-                  {/* Small Image 1 */}
-                  <div className="relative rounded-lg overflow-hidden shadow-md">
-                    <div className="aspect-square bg-gradient-to-br from-blue-100 to-indigo-100">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Droplets className="w-10 h-10 text-gray-400 opacity-30" />
-                      </div>
-                    </div>
-                  </div>
+                  {/* Navigation Arrows */}
+                  <button
+                    onClick={prevSlide}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+                    aria-label="Previous slide"
+                  >
+                    <ChevronLeft className="w-6 h-6 text-gray-800" />
+                  </button>
+                  <button
+                    onClick={nextSlide}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+                    aria-label="Next slide"
+                  >
+                    <ChevronRight className="w-6 h-6 text-gray-800" />
+                  </button>
 
-                  {/* Small Image 2 */}
-                  <div className="relative rounded-lg overflow-hidden shadow-md">
-                    <div className="aspect-square bg-gradient-to-br from-purple-100 to-pink-100">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Settings className="w-10 h-10 text-gray-400 opacity-30" />
-                      </div>
-                    </div>
+                  {/* Dots Indicator */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    {carouselImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentSlide(index)}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          currentSlide === index
+                            ? "bg-white w-8"
+                            : "bg-white/50"
+                        }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
@@ -198,59 +240,6 @@ const MGPSPage = () => {
         </div>
       </section>
 
-      {/* Medical Gases - Left Content, Right Image */}
-      <section className="section bg-white">
-        <div className="container-custom">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Left: Content */}
-              <div className="space-y-6">
-                <div>
-                  <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    <Droplets className="w-4 h-4" />
-                    Medical Gases
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    Medical Gases Covered
-                  </h2>
-                  <p className="text-gray-600 mb-6">
-                    Each system is designed independently to avoid
-                    cross-contamination.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  {medicalGases.map((gas, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-3 bg-gray-50 p-4 rounded-lg hover:bg-blue-50 transition-colors duration-200"
-                    >
-                      <gas.icon className="w-6 h-6 text-blue-600" />
-                      <span className="text-sm font-semibold text-gray-900">
-                        {gas.name}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right: Image */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <div className="aspect-[4/3] bg-gradient-to-br from-purple-100 to-pink-100">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-gray-400">
-                      <Droplets className="w-16 h-16 mx-auto mb-3 opacity-30" />
-                      <p className="font-semibold">Gas Manifold System</p>
-                      <p className="text-sm">Multi-gas distribution</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Standards - Right Content, Left Image */}
       <section className="section bg-gray-50">
         <div className="container-custom">
@@ -259,13 +248,11 @@ const MGPSPage = () => {
               {/* Left: Image */}
               <div className="order-2 lg:order-1 relative rounded-2xl overflow-hidden shadow-2xl">
                 <div className="aspect-[4/3] bg-gradient-to-br from-green-100 to-emerald-100">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-gray-400">
-                      <Shield className="w-16 h-16 mx-auto mb-3 opacity-30" />
-                      <p className="font-semibold">Compliance Testing</p>
-                      <p className="text-sm">HTM 02-01 Standards</p>
-                    </div>
-                  </div>
+                  <img
+                    src={standard.src}
+                    alt="Leader"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
@@ -279,7 +266,7 @@ const MGPSPage = () => {
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                     Standards & Compliance
                   </h2>
-                  <p className="text-xl font-bold text-gray-900 mb-6">
+                  <p className="text-xl font-bold text-gray-900 mb-2">
                     We strictly follow:
                   </p>
                 </div>
@@ -311,12 +298,6 @@ const MGPSPage = () => {
                       Certified medical-grade copper and components
                     </p>
                   </div>
-                </div>
-
-                <div className="bg-blue-600 text-white p-4 rounded-lg shadow-lg">
-                  <p className="font-bold">
-                    If it's not compliant on paper, it doesn't leave the site.
-                  </p>
                 </div>
               </div>
             </div>
@@ -368,7 +349,7 @@ const MGPSPage = () => {
               </div>
             </div>
 
-            <div className="mt-10 bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-6 rounded-xl">
+            <div className="mt-10 bg-cyan-800 text-white p-6 rounded-xl">
               <p className="text-xl font-bold text-white">
                 We don't install pipelines. We build reliable oxygen lifelines.
               </p>

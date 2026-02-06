@@ -21,6 +21,53 @@ const OurClients = () => {
   const [currentVideoUrl, setCurrentVideoUrl] = useState("");
 
   const clients = [
+    // Videos first (id 3, 4, 5, 6)
+    {
+      id: 3,
+      name: "Care CHL Hospital",
+      location: "Indore, Madhya Pradesh",
+      testimonial:
+        "Excellent work on our Cath Lab and Day Care infrastructure. The medical gas systems are working flawlessly. GMS is our trusted partner for all MGPS needs.",
+      videoUrl: "https://www.youtube.com/embed/vcZZ53oEHL0",
+      thumbnail: "/assets/clients/care-chl-thumb.jpg",
+      type: "video",
+      category: "Cardiac Care Specialist",
+    },
+    {
+      id: 4,
+      name: "Vijay Lakshmi Hospital",
+      location: "Khargone, Madhya Pradesh",
+      testimonial:
+        "Gita Mediline Services completed our Modular OT and complete MGPS setup with precision. The quality of work and adherence to safety standards is outstanding.",
+      videoUrl: "https://www.youtube.com/embed/6FsBvx72gGI",
+      thumbnail: "/assets/clients/vijay-lakshmi-thumb.jpg",
+      type: "video",
+      category: "Multi-specialty Hospital",
+    },
+    {
+      id: 5,
+      name: "Vivek Memorial Hospital",
+      location: "Indore, Madhya Pradesh",
+      testimonial:
+        "Professional execution of NICU MGPS installation. The team's understanding of neonatal care requirements and their commitment to quality is impressive.",
+      videoUrl: "https://www.youtube.com/embed/AB43gBw_Cmw",
+      thumbnail: "/assets/clients/vivek-thumb.jpg",
+      image: vivekHospital,
+      type: "video",
+      category: "Multi-specialty Hospital",
+    },
+    {
+      id: 6,
+      name: "Nakshatra Hospital",
+      location: "Indore, Madhya Pradesh",
+      testimonial:
+        "Complete satisfaction with the ICU MGPS infrastructure setup. The team's expertise in critical care medical gas systems and their commitment to quality is excellent.",
+      videoUrl: "https://www.youtube.com/embed/0b9NMCbO8pg",
+      thumbnail: "/assets/clients/nakshatra-thumb.jpg",
+      type: "video",
+      category: "Multi-specialty Hospital",
+    },
+    // Images after (id 1, 2, 7)
     {
       id: 1,
       name: "Sankara Eye Centre",
@@ -40,51 +87,6 @@ const OurClients = () => {
       image: motherHood,
       type: "image",
       category: "Women & Child Care",
-    },
-    {
-      id: 3,
-      name: "Care CHL Hospital",
-      location: "Indore, Madhya Pradesh",
-      testimonial:
-        "Excellent work on our Cath Lab and Day Care infrastructure. The medical gas systems are working flawlessly. GMS is our trusted partner for all MGPS needs.",
-      videoUrl: "https://www.youtube.com/embed/vcZZ53oEHL0?si=zdDSZOVih9NLhPqC",
-      thumbnail: "/assets/clients/care-chl-thumb.jpg",
-      type: "video",
-      category: "Cardiac Care Specialist",
-    },
-    {
-      id: 4,
-      name: "Vijay Lakshmi Hospital",
-      location: "Khargone, Madhya Pradesh",
-      testimonial:
-        "Gita Mediline Services completed our Modular OT and complete MGPS setup with precision. The quality of work and adherence to safety standards is outstanding.",
-      videoUrl: "https://www.youtube.com/embed/0b9NMCbO8pg?si=V9S2Kkr6ijaghWEZ",
-      thumbnail: "/assets/clients/vijay-lakshmi-thumb.jpg",
-      type: "video",
-      category: "Multi-specialty Hospital",
-    },
-    {
-      id: 5,
-      name: "Vivek Memorial Hospital",
-      location: "Indore, Madhya Pradesh",
-      testimonial:
-        "Professional execution of NICU MGPS installation. The team's understanding of neonatal care requirements and their commitment to quality is impressive.",
-      videoUrl: "https://www.youtube.com/embed/AB43gBw_Cmw?si=LC-O8Nybb5hFU6Js",
-      thumbnail: "/assets/clients/vivek-thumb.jpg",
-      image : vivekHospital,
-      type: "image",
-      category: "Multi-specialty Hospital",
-    },
-    {
-      id: 6,
-      name: "Nakshatra Hospital",
-      location: "Indore, Madhya Pradesh",
-      testimonial:
-        "Complete satisfaction with the ICU MGPS infrastructure setup. The team's expertise in critical care medical gas systems and their commitment to quality is excellent.",
-      videoUrl: "https://www.youtube.com/embed/0b9NMCbO8pg?si=V9S2Kkr6ijaghWEZ",
-      thumbnail: "/assets/clients/nakshatra-thumb.jpg",
-      type: "video",
-      category: "Multi-specialty Hospital",
     },
     {
       id: 7,
@@ -219,12 +221,21 @@ const OurClients = () => {
                         >
                           {/* YouTube Video Thumbnail */}
                           <img
-                            src={`https://img.youtube.com/vi/${client.videoUrl.split('/embed/')[1].split('?')[0]}/maxresdefault.jpg`}
+                            src={`https://img.youtube.com/vi/${
+                              client.videoUrl
+                                .split("/embed/")[1]
+                                ?.split("?")[0] ||
+                              client.videoUrl.split("/embed/")[1]
+                            }/maxresdefault.jpg`}
                             alt={`${client.name} video thumbnail`}
                             className="w-full h-full object-cover"
                             onError={(e) => {
-                              // Fallback to medium quality if maxresdefault doesn't exist
-                              e.target.src = `https://img.youtube.com/vi/${client.videoUrl.split('/embed/')[1].split('?')[0]}/mqdefault.jpg`;
+                              e.target.src = `https://img.youtube.com/vi/${
+                                client.videoUrl
+                                  .split("/embed/")[1]
+                                  ?.split("?")[0] ||
+                                client.videoUrl.split("/embed/")[1]
+                              }/mqdefault.jpg`;
                             }}
                           />
                           {/* Dark overlay on hover */}

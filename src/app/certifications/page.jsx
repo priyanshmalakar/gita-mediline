@@ -5,49 +5,55 @@ import {
   Shield,
   Award,
   CheckCircle,
-  Eye,
   X,
   FileCheck,
   Building2,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
 
 export default function CertificationPage() {
-  const [activeCert, setActiveCert] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
-    const checkMobile = () => {
-      setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  // Auto-play carousel
+  useEffect(() => {
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setActiveIndex((prev) => (prev + 1) % certifications.length);
+      }, 5000); // Change slide every 5 seconds
+
+      return () => clearInterval(interval);
+    }
+  }, [isPaused]);
 
   const certifications = [
     {
       id: 1,
-      name: "CE Certificate",
+      name: "HTM 02-01 Authorised Person",
       description:
-        "European Conformity certification for medical equipment compliance",
-      image: "/certificates/CEMarking.pdf",
-      type: "pdf",
-      icon: Shield,
-      color: "from-blue-600 to-cyan-500",
-      borderColor: "border-blue-500/30",
-      bgColor: "bg-blue-50",
-      accentColor: "text-blue-700",
+        "MGPS Certified Authorised Person for Medical Gas Pipeline Systems",
+      image:
+        "/certificates/HTM 0201_authorised_person_mgps_certified_page-0001.jpg",
+      icon: CheckCircle,
+      color: "from-purple-600 to-pink-500",
+      borderColor: "border-purple-500/30",
+      bgColor: "bg-purple-50",
+      accentColor: "text-purple-700",
     },
+
     {
       id: 2,
       name: "ISO 9001:2015",
       description:
         "Quality Management System certification for healthcare infrastructure",
-      image: "/certificates/Iso9001_2015.pdf",
-      type: "pdf",
+      image: "/certificates/Iso9001_2015_page-0001.jpg",
       icon: Award,
       color: "from-emerald-600 to-teal-500",
       borderColor: "border-emerald-500/30",
@@ -56,109 +62,41 @@ export default function CertificationPage() {
     },
     {
       id: 3,
-      name: "HTM 02-01 Authorised Person",
+      name: "CE Certificate",
       description:
-        "MGPS Certified Authorised Person for Medical Gas Pipeline Systems",
-      image: "/certificates/HTM 0201_authorised_person_mgps_certified.pdf",
-      type: "pdf",
-      icon: CheckCircle,
-      color: "from-purple-600 to-pink-500",
-      borderColor: "border-purple-500/30",
-      bgColor: "bg-purple-50",
-      accentColor: "text-purple-700",
+        "European Conformity certification for medical equipment compliance",
+      image: "/certificates/CEMarking_page-0001.jpg",
+      icon: Shield,
+      color: "from-blue-600 to-cyan-500",
+      borderColor: "border-blue-500/30",
+      bgColor: "bg-blue-50",
+      accentColor: "text-blue-700",
     },
   ];
 
-  // Enhanced security: Disable right-click, shortcuts, and print
-  useEffect(() => {
-    const disableContextMenu = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    };
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev + 1) % certifications.length);
+    setIsPaused(true); // Pause auto-play when user manually navigates
+    setTimeout(() => setIsPaused(false), 10000); // Resume after 10 seconds
+  };
 
-    const disableShortcuts = (e) => {
-      if (e.key === "PrintScreen") {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-      }
+  const prevSlide = () => {
+    setActiveIndex((prev) =>
+      prev === 0 ? certifications.length - 1 : prev - 1
+    );
+    setIsPaused(true); // Pause auto-play when user manually navigates
+    setTimeout(() => setIsPaused(false), 10000); // Resume after 10 seconds
+  };
 
-      if (
-        (e.ctrlKey && ["s", "p", "u"].includes(e.key.toLowerCase())) ||
-        (e.metaKey && ["s", "p", "u"].includes(e.key.toLowerCase())) ||
-        e.key === "F12" ||
-        (e.ctrlKey &&
-          e.shiftKey &&
-          ["i", "j", "c"].includes(e.key.toLowerCase()))
-      ) {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-      }
-    };
-
-    const disableSelection = () => {
-      document.body.style.userSelect = "none";
-      document.body.style.webkitUserSelect = "none";
-      document.body.style.mozUserSelect = "none";
-      document.body.style.msUserSelect = "none";
-    };
-
-    const preventDrag = (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    };
-
-    document.addEventListener("contextmenu", disableContextMenu, true);
-    document.addEventListener("keydown", disableShortcuts, true);
-    document.addEventListener("dragstart", preventDrag, true);
-    window.addEventListener("contextmenu", disableContextMenu, true);
-    disableSelection();
-
-    return () => {
-      document.removeEventListener("contextmenu", disableContextMenu, true);
-      document.removeEventListener("keydown", disableShortcuts, true);
-      document.removeEventListener("dragstart", preventDrag, true);
-      window.removeEventListener("contextmenu", disableContextMenu, true);
-      document.body.style.userSelect = "";
-      document.body.style.webkitUserSelect = "";
-      document.body.style.mozUserSelect = "";
-      document.body.style.msUserSelect = "";
-    };
-  }, []);
-
-  // Additional security for PDF modal
-  useEffect(() => {
-    if (activeCert) {
-      const beforePrint = (e) => {
-        e.preventDefault();
-        return false;
-      };
-
-      const blockContextMenu = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-      };
-
-      window.addEventListener("beforeprint", beforePrint);
-      document.addEventListener("contextmenu", blockContextMenu, true);
-
-      return () => {
-        window.removeEventListener("beforeprint", beforePrint);
-        document.removeEventListener("contextmenu", blockContextMenu, true);
-      };
-    }
-  }, [activeCert]);
+  const goToSlide = (index) => {
+    setActiveIndex(index);
+    setIsPaused(true); // Pause auto-play when user manually navigates
+    setTimeout(() => setIsPaused(false), 10000); // Resume after 10 seconds
+  };
 
   return (
-    <div
-      className="bg-white select-none"
-      onContextMenu={(e) => e.preventDefault()}
-    >
-      {/* Hero Section - Matching About Page Style */}
+    <div className="bg-white">
+      {/* Hero Section */}
       <section className="relative text-white py-6 md:py-10 overflow-hidden">
         {/* Background Image */}
         <div
@@ -186,6 +124,10 @@ export default function CertificationPage() {
 
             {/* Certifications Badges */}
             <div className="flex flex-wrap justify-center gap-3 pt-4">
+                 <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
+                <CheckCircle className="w-4 h-4" />
+                <span className="text-sm font-semibold">HTM 02-01</span>
+              </div>
               <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
                 <Shield className="w-4 h-4" />
                 <span className="text-sm font-semibold">ISO 9001:2015</span>
@@ -196,17 +138,14 @@ export default function CertificationPage() {
                 <span className="text-sm font-semibold">CE Certified</span>
               </div>
 
-              <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
-                <CheckCircle className="w-4 h-4" />
-                <span className="text-sm font-semibold">HTM 02-01</span>
-              </div>
+           
             </div>
           </div>
         </div>
       </section>
 
-      {/* Certifications Grid Section */}
-      <section className=" bg-gradient-to-b from-gray-50 to-white py-10">
+      {/* Carousel Section */}
+      <section className="bg-gradient-to-b from-gray-50 to-white py-16">
         <div className="container-custom">
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
@@ -224,93 +163,158 @@ export default function CertificationPage() {
               </p>
             </div>
 
-            {/* Certifications Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {certifications.map((cert, index) => {
-                const Icon = cert.icon;
-                return (
-                  <div
-                    key={cert.id}
-                    className={`group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 ${
-                      cert.borderColor
-                    } hover:scale-105 ${
-                      isLoaded
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-10"
-                    }`}
-                    style={{
-                      transitionDelay: `${index * 150}ms`,
-                    }}
-                  >
-                    {/* Certificate Icon Header */}
-                    <div
-                      className={`relative h-48 ${cert.bgColor} flex items-center justify-center overflow-hidden`}
-                    >
-                      {/* Background Pattern */}
-                      <div className="absolute inset-0 opacity-5">
-                        <div
-                          className="absolute inset-0"
-                          style={{
-                            backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`,
-                            backgroundSize: "20px 20px",
-                          }}
-                        ></div>
-                      </div>
+            {/* Carousel Container */}
+            <div className="relative">
+              {/* Main Carousel */}
+              <div
+                className="relative overflow-hidden rounded-2xl bg-white shadow-2xl"
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+              >
+                <div
+                  className="flex transition-transform duration-500 ease-out"
+                  style={{
+                    transform: `translateX(-${activeIndex * 100}%)`,
+                  }}
+                >
+                  {certifications.map((cert) => {
+                    const Icon = cert.icon;
+                    return (
+                      <div key={cert.id} className="min-w-full">
+                        <div className="flex flex-col gap-6 p-6 md:grid md:grid-cols-2 md:gap-8 md:p-12">
+                          {/* Certificate Image - Full width on mobile */}
+                          <div className="flex items-center justify-center order-1">
+                            <div className="relative w-full max-w-md mx-auto aspect-[3/4] rounded-xl overflow-hidden shadow-lg border-4 border-gray-100">
+                              <img
+                                src={cert.image}
+                                alt={cert.name}
+                                className="w-full h-full object-contain bg-white"
+                              />
+                            </div>
+                          </div>
 
-                      {/* Animated Gradient Orb */}
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}
-                      ></div>
+                          {/* Certificate Info - Below image on mobile */}
+                          <div className="flex flex-col justify-center space-y-4 md:space-y-6 order-2">
+                            <div>
+                              <div
+                                className={`inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-bold ${cert.bgColor} ${cert.accentColor} mb-3 md:mb-4`}
+                              >
+                                <Icon className="w-3 h-3 md:w-4 md:h-4" />
+                                VERIFIED
+                              </div>
+                              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
+                                {cert.name}
+                              </h3>
+                              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+                                {cert.description}
+                              </p>
+                            </div>
 
-                      {/* Icon */}
-                      <div className="relative z-10">
-                        <div
-                          className={`w-24 h-24 bg-gradient-to-br ${cert.color} rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}
-                        >
-                          <Icon className="w-12 h-12 text-white" />
+                            {/* Features */}
+                            <div className="space-y-2 md:space-y-3">
+                              <div className="flex items-start gap-2 md:gap-3">
+                                <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[#44AB7E] mt-0.5 flex-shrink-0" />
+                                <p className="text-sm md:text-base text-gray-700">
+                                  Internationally recognized standard
+                                </p>
+                              </div>
+                              <div className="flex items-start gap-2 md:gap-3">
+                                <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[#44AB7E] mt-0.5 flex-shrink-0" />
+                                <p className="text-sm md:text-base text-gray-700">
+                                  Regular audits and compliance checks
+                                </p>
+                              </div>
+                              <div className="flex items-start gap-2 md:gap-3">
+                                <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[#44AB7E] mt-0.5 flex-shrink-0" />
+                                <p className="text-sm md:text-base text-gray-700">
+                                  Commitment to excellence and safety
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
+                    );
+                  })}
+                </div>
 
-                      {/* Floating Badge */}
-                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg">
-                        <span
-                          className={`text-xs font-bold ${cert.accentColor}`}
+                {/* Navigation Arrows - Larger and better positioned for mobile */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-2 md:left-4 top-1/3 md:top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
+                  aria-label="Previous certificate"
+                >
+                  <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-gray-800" />
+                </button>
+
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-2 md:right-4 top-1/3 md:top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white p-2 md:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
+                  aria-label="Next certificate"
+                >
+                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-gray-800" />
+                </button>
+              </div>
+
+              {/* Carousel Indicators - Larger dots for mobile */}
+              <div className="flex justify-center gap-2 md:gap-2 mt-6 md:mt-8">
+                {certifications.map((cert, index) => (
+                  <button
+                    key={cert.id}
+                    onClick={() => goToSlide(index)}
+                    className={`h-2.5 md:h-2 rounded-full transition-all duration-300 ${
+                      index === activeIndex
+                        ? "w-10 md:w-8 bg-[#005B77]"
+                        : "w-2.5 md:w-2 bg-gray-300 hover:bg-gray-400"
+                    }`}
+                    aria-label={`Go to ${cert.name}`}
+                  />
+                ))}
+              </div>
+
+              {/* Thumbnail Navigation - Stacked on mobile, grid on desktop */}
+              <div className="flex flex-col md:grid md:grid-cols-3 gap-3 md:gap-4 mt-6 md:mt-8">
+                {certifications.map((cert, index) => {
+                  const Icon = cert.icon;
+                  return (
+                    <button
+                      key={cert.id}
+                      onClick={() => goToSlide(index)}
+                      className={`p-3 md:p-4 rounded-xl border-2 transition-all duration-300 ${
+                        index === activeIndex
+                          ? `${cert.borderColor} bg-white shadow-lg md:scale-105`
+                          : "border-gray-200 bg-gray-50 hover:border-gray-300 hover:shadow-md"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <div
+                          className={`w-10 h-10 md:w-10 md:h-10 rounded-lg bg-gradient-to-br ${cert.color} flex items-center justify-center flex-shrink-0`}
                         >
-                          VERIFIED
-                        </span>
+                          <Icon className="w-5 h-5 md:w-5 md:h-5 text-white" />
+                        </div>
+                        <div className="text-left flex-1">
+                          <h4 className="font-bold text-sm md:text-sm text-gray-900">
+                            {cert.name}
+                          </h4>
+                          <p className="text-xs text-gray-500 mt-0.5 md:hidden">
+                            Tap to view
+                          </p>
+                        </div>
+                        {index === activeIndex && (
+                          <CheckCircle className="w-5 h-5 text-[#44AB7E] md:hidden" />
+                        )}
                       </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-6 space-y-4">
-                      <div>
-                        <h3 className="text-xl font-black text-gray-900 mb-2 group-hover:text-[#005B77] transition-colors">
-                          {cert.name}
-                        </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed">
-                          {cert.description}
-                        </p>
-                      </div>
-
-                      {/* Action Button */}
-                      <button
-                        onClick={() => setActiveCert(cert)}
-                        className={`w-full flex items-center justify-center gap-2 bg-gradient-to-r ${cert.color} text-white py-3 px-4 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300 group`}
-                      >
-                        <Eye className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                        View Certificate
-                      </button>
-                    </div>
-                  </div>
-                );
-              })}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Certifications Matter Section */}
-      <section className="section bg-white py-10">
+      <section className="bg-white py-16">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12 space-y-4">
@@ -416,167 +420,6 @@ export default function CertificationPage() {
           </div>
         </div>
       </section>
-
-      {/* Modal for Certificate Viewing - FIXED SCROLLING */}
-      {activeCert && (
-        <div
-          className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in select-none"
-          onClick={() => setActiveCert(null)}
-          onContextMenu={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-          }}
-        >
-          <div
-            className="relative w-full max-w-6xl h-[90vh] flex flex-col animate-slide-up"
-            onClick={(e) => e.stopPropagation()}
-            onContextMenu={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              return false;
-            }}
-          >
-            {/* Fixed Header with Close Button */}
-            <div className="flex items-center justify-between bg-gradient-to-r from-gray-900 to-gray-800 px-6 py-4 rounded-t-2xl border-b-2 border-gray-700">
-              <div className="flex items-center gap-3 text-white">
-                {React.createElement(activeCert.icon, {
-                  className: "w-5 h-5",
-                })}
-                <span className="font-bold text-lg">{activeCert.name}</span>
-              </div>
-
-              <button
-                onClick={() => setActiveCert(null)}
-                className="text-white hover:text-gray-300 transition-all duration-200 hover:scale-110 bg-white/10 backdrop-blur-md p-2 rounded-full border border-white/20"
-                aria-label="Close"
-              >
-                <X size={24} />
-              </button>
-            </div>
-
-            {/* Scrollable Certificate Container */}
-            <div className="relative flex-1 bg-white rounded-b-2xl overflow-auto border-4 border-gray-200">
-              {/* Watermarks - Fixed position */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-30">
-                <span className="text-7xl md:text-8xl lg:text-9xl font-black text-[#005B77]/[0.05] rotate-[-25deg] tracking-wide drop-shadow-md whitespace-nowrap">
-                  GITA MEDILINE
-                </span>
-              </div>
-
-              <div className="absolute top-1/4 left-10 pointer-events-none select-none z-30">
-                <span className="text-4xl md:text-5xl font-black text-[#44AB7E]/[0.06] rotate-[-15deg] inline-block drop-shadow-sm">
-                  GITA MEDILINE
-                </span>
-              </div>
-
-              <div className="absolute bottom-1/4 right-10 pointer-events-none select-none z-30">
-                <span className="text-4xl md:text-5xl font-black text-[#44AB7E]/[0.06] rotate-[15deg] inline-block drop-shadow-sm">
-                  GITA MEDILINE
-                </span>
-              </div>
-
-              {/* PDF Viewer - Scrollable with Protected Overlay */}
-              {activeCert.type === "pdf" ? (
-                <div
-                  className="w-full min-h-full relative"
-                  onContextMenu={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    return false;
-                  }}
-                >
-                  <div className="w-full h-full overflow-auto p-4">
-                    {isMobile ? (
-                      // Mobile: Use object tag as fallback
-                      <object
-                        data={activeCert.image}
-                        type="application/pdf"
-                        className="w-full border-0"
-                        style={{
-                          height: "150vh",
-                          minHeight: "150vh",
-                        }}
-                      >
-                        <embed
-                          src={`https://docs.google.com/viewer?url=${encodeURIComponent(
-                            window.location.origin + activeCert.image
-                          )}&embedded=true`}
-                          className="w-full border-0"
-                          style={{
-                            height: "150vh",
-                            minHeight: "150vh",
-                          }}
-                        />
-                      </object>
-                    ) : (
-                      <iframe
-                        src={`${activeCert.image}#toolbar=0&navpanes=0&scrollbar=0`}
-                        className="w-full border-0 pointer-events-none"
-                        style={{
-                          height: "150vh",
-                          minHeight: "150vh",
-                        }}
-                        title={activeCert.name}
-                      />
-                    )}
-                  </div>
-
-                  {/* Transparent Protection Layer - Blocks Right Click but allows wheel scroll */}
-                  <div
-                    className="absolute inset-0 z-10"
-                    onContextMenu={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      return false;
-                    }}
-                    onMouseDown={(e) => {
-                      // Block all mouse buttons except left click for interaction
-                      if (e.button !== 0) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        return false;
-                      }
-                    }}
-                    style={{
-                      background: "transparent",
-                      userSelect: "none",
-                      WebkitUserSelect: "none",
-                      MozUserSelect: "none",
-                      msUserSelect: "none",
-                      cursor: "default",
-                    }}
-                  />
-                </div>
-              ) : (
-                <div className="w-full h-full p-8">
-                  <img
-                    src={activeCert.image}
-                    alt={activeCert.name}
-                    draggable={false}
-                    onContextMenu={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      return false;
-                    }}
-                    className="w-full h-auto object-contain select-none pointer-events-none"
-                  />
-                </div>
-              )}
-            </div>
-
-            {/* Fixed Footer */}
-            <div className="bg-gradient-to-r from-gray-900 to-gray-800 px-6 py-3 rounded-b-2xl mt-0">
-              <div className="flex items-center justify-center text-sm text-gray-300">
-                <Shield className="w-4 h-4 mr-2" />
-                <span className="font-semibold">
-                  Certified & Verified Document
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

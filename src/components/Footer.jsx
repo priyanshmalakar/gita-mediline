@@ -39,25 +39,25 @@ const Footer = () => {
     {
       name: "Facebook",
       icon: Facebook,
-      href: "https://facebook.com/gitamediline",
+      href: "https://www.facebook.com/profile.php?id=100063903677653",
       color: "hover:bg-blue-600",
     },
     {
       name: "Instagram",
       icon: Instagram,
-      href: "https://instagram.com/gitamediline",
+      href: "https://instagram.com/gita_mediline_services_india",
       color: "hover:bg-pink-600",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com/company/gitamediline",
+      href: "https://www.linkedin.com/in/gita-mediline-services-4b15231b8",
       color: "hover:bg-blue-700",
     },
     {
       name: "YouTube",
       icon: Youtube,
-      href: "https://youtube.com/@gitamediline",
+      href: "https://youtube.com/@gitamedilineservices2163?si=bo85MMbzkBhwg-em",
       color: "hover:bg-red-600",
     },
     // {

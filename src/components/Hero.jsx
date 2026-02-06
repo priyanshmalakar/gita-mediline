@@ -10,6 +10,8 @@ import {
   Activity,
   Zap,
   Mail,
+  Star,
+    Building2,
 } from "lucide-react";
 import Image from "next/image";
 import banner1 from "../assets/banner/banner.jpeg";
@@ -68,7 +70,7 @@ const Hero = () => {
           </div>
 
           {/* Enhanced Gradient Overlay - Better readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/75 to-gray-900/90 md:bg-gradient-to-r md:from-gray-900 md:via-gray-900/75 md:to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-900/85 to-gray-900/90 md:bg-gradient-to-r md:from-gray-900 md:via-gray-900/75 md:to-transparent"></div>
         </div>
 
         {/* Carousel Indicators */}
@@ -90,14 +92,14 @@ const Hero = () => {
         <div className="container-custom relative z-20  ">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 py-10 min-h-[60vh] md:min-h-[70vh]">
             {/* Left Content - Reorganized for Mobile */}
-            <div className="space-y-4 md:space-y-6 animate-slide-up">
+            <div className="space-y-3 md:space-y-4 animate-slide-up">
               {/* Top Badge - Simplified for Mobile */}
-              {/* <div className="inline-flex items-center gap-2 bg-white/95 backdrop-blur-sm px-3 py-2 md:px-4 md:py-2.5 rounded-full shadow-lg border border-blue-100">
-                <Award className="w-4 h-4 md:w-5 md:h-5 text-blue-600" />
-                <span className="text-xs md:text-sm font-semibold text-gray-700">
-                  ISO 9001:2015 & CE Certified
+              <div className="md:hidden inline-flex items-center gap-2 bg-gradient-to-r from-[#44AB7E] to-[#359163] backdrop-blur-sm px-4 py-2.5 rounded-full shadow-xl border border-white/30">
+                <Star className="w-4 h-4 md:w-5 md:h-5 text-white fill-white" />
+                <span className="text-xs md:text-sm font-bold text-white">
+                  Trusted Healthcare Infrastructure Partner
                 </span>
-              </div> */}
+              </div>
 
               {/* Main Heading - Better spacing */}
               <div className="space-y-2 md:space-y-2">
@@ -117,31 +119,29 @@ const Hero = () => {
               </p>
 
               {/* Certification Badges - Stacked on small mobile */}
-              <div className="flex flex-col xs:flex-row gap-2 md:gap-3">
+              <div className="flex flex-col md:flex-row xs:flex-row gap-2 md:gap-3">
                 <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2.5 md:px-4 md:py-3 rounded-lg border border-white/20 shadow-lg">
                   <Shield className="w-4 h-4 md:w-5 md:h-5 text-cyan-300 flex-shrink-0" />
                   <span className="text-xs md:text-sm font-medium text-white">
-                    HTM 02-01 Certified
+                    HTM 02-01
                   </span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2.5 md:px-4 md:py-3 rounded-lg border border-white/20 shadow-lg">
                   <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-300 flex-shrink-0" />
                   <span className="text-xs md:text-sm font-medium text-white">
-                    Authorised Person (AP-MGPS)
+                    ISO 9001:2015
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2.5 md:px-4 md:py-3 rounded-lg border border-white/20 shadow-lg">
+                  <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-300 flex-shrink-0" />
+                  <span className="text-xs md:text-sm font-medium text-white">
+                    CE Certified
                   </span>
                 </div>
               </div>
 
               {/* CTA Buttons - Side by side on mobile, improved styling */}
-              <div className="flex flex-row gap-3 pt-2">
-                {/* <Link
-                  href="/contact"
-                  className="flex-1 sm:flex-none btn-hero-primary group"
-                >
-                  <Mail className="w-4 h-4 md:w-5 md:h-5" />
-                  <span className="hidden xs:inline">Contact Us</span>
-                  <span className="xs:hidden">Contact</span>
-                </Link> */}
+              <div className="w-full md:w-[80%] gap-3 pt-2">
                 <a
                   href="tel:+917067534498"
                   className="flex-1 sm:flex-none  group"
@@ -152,7 +152,75 @@ const Hero = () => {
                 </a>
               </div>
             </div>
-           
+
+                <div className="hidden lg:flex flex-col gap-6 animate-slide-up animation-delay-500">
+              <div className="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/40 shadow-2xl">
+                <h3
+                  className="text-2xl font-bold text-white mb-6"
+                  style={{ textShadow: "0 2px 10px rgba(0,0,0,0.8)" }}
+                >
+                  Why Choose Us?
+                </h3>
+
+                <div className="space-y-5">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-gradient-to-br from-[#44AB7E] to-[#359163] p-3 rounded-xl shadow-lg flex-shrink-0">
+                      <CheckCircle className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white mb-1">
+                        HTM 02-01 Certified
+                      </h4>
+                      <p className="text-sm text-gray-200">
+                        Authorized personnel for medical gas systems
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="bg-gradient-to-br from-[#44AB7E] to-[#359163] p-3 rounded-xl shadow-lg flex-shrink-0">
+                      <Shield className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white mb-1">
+                        Complete Compliance
+                      </h4>
+                      <p className="text-sm text-gray-200">
+                        ISO 9001:2015 & CE certified solutions
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="bg-gradient-to-br from-[#44AB7E] to-[#359163] p-3 rounded-xl shadow-lg flex-shrink-0">
+                      <Wrench className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white mb-1">
+                        24/7 Support
+                      </h4>
+                      <p className="text-sm text-gray-200">
+                        Round-the-clock maintenance & emergency service
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="bg-gradient-to-br from-[#44AB7E] to-[#359163] p-3 rounded-xl shadow-lg flex-shrink-0">
+                      <Building2 className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white mb-1">
+                        Turnkey Solutions
+                      </h4>
+                      <p className="text-sm text-gray-200">
+                        From design to installation & maintenance
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -178,7 +246,6 @@ const Hero = () => {
       </section>
 
       {/* Sticky Mobile WhatsApp Button */}
-    
     </div>
   );
 };
