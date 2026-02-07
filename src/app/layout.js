@@ -17,9 +17,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Gita Mediline",
-  description: "Gita Mediline",
+  title: "Gita Mediline Services | MGPS & Modular OT Specialists",
+
+  description:
+    "Gita Mediline Services provides MGPS supply, installation, testing, commissioning and maintenance along with Modular Operation Theatre solutions for hospitals. HTM compliant medical gas infrastructure specialists in Madhya Pradesh.",
+
+  keywords: [
+    "MGPS installation",
+    "medical gas pipeline system",
+    "hospital gas pipeline",
+    "modular operation theatre",
+    "medical gas contractor",
+    "MGPS maintenance",
+    "hospital infrastructure services",
+    "HTM compliant MGPS",
+    "oxygen pipeline hospital",
+    "medical gas engineering"
+  ],
+
+  authors: [{ name: "Gita Mediline Services" }],
+
+  openGraph: {
+    title: "MGPS & Modular OT Infrastructure Experts",
+    description:
+      "Certified hospital medical gas pipeline and modular OT solutions.",
+    url: "https://gitamediline.com",
+    siteName: "Gita Mediline Services",
+    type: "website",
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (
