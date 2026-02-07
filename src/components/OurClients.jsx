@@ -29,6 +29,7 @@ const OurClients = () => {
       testimonial:
         "Excellent work on our Cath Lab and Day Care infrastructure. The medical gas systems are working flawlessly. GMS is our trusted partner for all MGPS needs.",
       videoUrl: "https://www.youtube.com/embed/vcZZ53oEHL0",
+       videoId: "vcZZ53oEHL0",
       thumbnail: "/assets/clients/care-chl-thumb.jpg",
       type: "video",
       category: "Cardiac Care Specialist",
@@ -40,6 +41,7 @@ const OurClients = () => {
       testimonial:
         "Gita Mediline Services completed our Modular OT and complete MGPS setup with precision. The quality of work and adherence to safety standards is outstanding.",
       videoUrl: "https://www.youtube.com/embed/6FsBvx72gGI",
+      videoId: "6FsBvx72gGI",
       thumbnail: "/assets/clients/vijay-lakshmi-thumb.jpg",
       type: "video",
       category: "Multi-specialty Hospital",
@@ -51,6 +53,7 @@ const OurClients = () => {
       testimonial:
         "Professional execution of NICU MGPS installation. The team's understanding of neonatal care requirements and their commitment to quality is impressive.",
       videoUrl: "https://www.youtube.com/embed/AB43gBw_Cmw",
+      videoId: "AB43gBw_Cmw",
       thumbnail: "/assets/clients/vivek-thumb.jpg",
       image: vivekHospital,
       type: "video",
@@ -63,6 +66,7 @@ const OurClients = () => {
       testimonial:
         "Complete satisfaction with the ICU MGPS infrastructure setup. The team's expertise in critical care medical gas systems and their commitment to quality is excellent.",
       videoUrl: "https://www.youtube.com/embed/0b9NMCbO8pg",
+      videoId: "0b9NMCbO8pg",
       thumbnail: "/assets/clients/nakshatra-thumb.jpg",
       type: "video",
       category: "Multi-specialty Hospital",
@@ -208,36 +212,29 @@ const OurClients = () => {
                             </div>
                           </div>
                           {/* When you have actual images, uncomment and use: */}
-                          <img
-                            src={client.image.src}
-                            alt={client.name}
-                            className="w-full h-full object-cover"
-                          />
+                          {client.image && (
+                            <img
+                              src={client.image?.src}
+                              alt={client.name}
+                              className="w-full h-full object-cover"
+                            />
+                          )}
                         </div>
                       ) : (
                         <div
                           className="relative w-full h-full group cursor-pointer"
-                          onClick={() => openVideoModal(client.videoUrl)}
+                          onClick={() =>
+                            openVideoModal(
+                              `https://www.youtube.com/embed/${client.videoId}?autoplay=1`
+                            )
+                          }
                         >
                           {/* YouTube Video Thumbnail */}
                           <img
-                            src={`https://img.youtube.com/vi/${
-                              client.videoUrl
-                                .split("/embed/")[1]
-                                ?.split("?")[0] ||
-                              client.videoUrl.split("/embed/")[1]
-                            }/maxresdefault.jpg`}
-                            alt={`${client.name} video thumbnail`}
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              e.target.src = `https://img.youtube.com/vi/${
-                                client.videoUrl
-                                  .split("/embed/")[1]
-                                  ?.split("?")[0] ||
-                                client.videoUrl.split("/embed/")[1]
-                              }/mqdefault.jpg`;
-                            }}
+                            src={`https://img.youtube.com/vi/${client.videoId}/hqdefault.jpg`}
+                            alt="thumbnail"
                           />
+
                           {/* Dark overlay on hover */}
                           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
                           {/* Play button */}
