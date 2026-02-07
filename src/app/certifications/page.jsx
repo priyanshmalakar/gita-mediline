@@ -178,8 +178,8 @@ export default function CertificationPage() {
                   {certifications.map((cert) => {
                     const Icon = cert.icon;
                     return (
-                      <div key={cert.id} className="min-w-full">
-                        <div className="flex flex-col gap-6 p-6 md:grid md:grid-cols-2 md:gap-8 md:p-12">
+                      <div key={cert.id} className="min-w-full ">
+                        <div className="flex flex-col gap-6  md:grid md:grid-cols-2 md:gap-8 md:p-12">
                           {/* Certificate Image - Full width on mobile */}
                           <div className="flex items-center justify-center order-1">
                             <div className="relative w-full max-w-md mx-auto aspect-[3/4] rounded-xl overflow-hidden shadow-lg border-4 border-gray-100">
@@ -187,7 +187,7 @@ export default function CertificationPage() {
                               <img
                                 src={cert.image}
                                 alt={cert.name}
-                                className="w-full h-full object-contain bg-white select-none pointer-events-none"
+                                className="w-full h-full bg-white select-none pointer-events-none"
                               />
 
                               {/* Watermark Overlay */}

@@ -81,7 +81,7 @@ const AboutPage = () => {
   ></div>
 
   {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-br from-black/35 via-black/35 to-black/40"></div>
+  <div className="absolute inset-0 bg-gradient-to-br from-black/15 via-black/15 to-black/20"></div>
 
   {/* Content */}
   <div className="container-custom relative z-10">
