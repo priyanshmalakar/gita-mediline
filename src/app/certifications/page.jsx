@@ -124,7 +124,7 @@ export default function CertificationPage() {
 
             {/* Certifications Badges */}
             <div className="flex flex-wrap justify-center gap-3 pt-4">
-                 <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
+              <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
                 <CheckCircle className="w-4 h-4" />
                 <span className="text-sm font-semibold">HTM 02-01</span>
               </div>
@@ -137,8 +137,6 @@ export default function CertificationPage() {
                 <Award className="w-4 h-4" />
                 <span className="text-sm font-semibold">CE Certified</span>
               </div>
-
-           
             </div>
           </div>
         </div>
@@ -185,11 +183,21 @@ export default function CertificationPage() {
                           {/* Certificate Image - Full width on mobile */}
                           <div className="flex items-center justify-center order-1">
                             <div className="relative w-full max-w-md mx-auto aspect-[3/4] rounded-xl overflow-hidden shadow-lg border-4 border-gray-100">
+                              {/* Certificate Image */}
                               <img
                                 src={cert.image}
                                 alt={cert.name}
-                                className="w-full h-full object-contain bg-white"
+                                className="w-full h-full object-contain bg-white select-none pointer-events-none"
                               />
+
+                              {/* Watermark Overlay */}
+                              <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+                                <div className="watermark-grid">
+                                  {Array.from({ length: 12 }).map((_, i) => (
+                                    <span key={i}>gitamediline.com</span>
+                                  ))}
+                                </div>
+                              </div>
                             </div>
                           </div>
 

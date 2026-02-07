@@ -150,6 +150,21 @@
     @apply px-4 py-3 md:px-6 md:py-3.5 bg-white/20 backdrop-blur-md text-white font-semibold rounded-full border-2 border-white/40 hover:bg-white hover:text-[#005B77] hover:border-white transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 text-sm md:text-base;
   }
 
+  .watermark-grid {
+  width: 140%;
+  height: 140%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  transform: rotate(-30deg);
+  opacity: 0.24;
+   font-weight: 700;
+  font-size: 32px;
+  color: #005B77;
+  text-align: center;
+  user-select: none;
+}
+
   #btn-hero-call {
     @apply px-4 py-3 md:px-6 md:py-3.5 bg-gradient-to-r from-[#44AB7E] to-[#359163] text-white font-semibold rounded-full hover:from-[#359163] hover:to-[#44AB7E] transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-2xl hover:scale-105 text-sm md:text-base;
   }
