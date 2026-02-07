@@ -215,7 +215,7 @@ const ModularOTPage = () => {
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left: Image */}
               <div className=" rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-[70vh]">
+                <div className="w-full ">
                   <img
                     src={modularOTComponent.src}
                     alt="Leader"
@@ -324,7 +324,7 @@ const ModularOTPage = () => {
 
               {/* Right: Image */}
               <div className=" rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-[70vh]">
+                <div className="w-full ">
                  <img
                  src={modularStandards.src}
                  alt=""

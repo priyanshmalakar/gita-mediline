@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          {/* <ScreenProtection /> */}
+          <ScreenProtection />
         <Toaster
           position="top-right"
           toastOptions={{
