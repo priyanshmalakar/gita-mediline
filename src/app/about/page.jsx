@@ -81,7 +81,7 @@ const AboutPage = () => {
   ></div>
 
   {/* Dark Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-br from-black/65 via-black/55 to-black/45"></div>
+  <div className="absolute inset-0 bg-gradient-to-br from-black/35 via-black/35 to-black/40"></div>
 
   {/* Content */}
   <div className="container-custom relative z-10">
@@ -103,19 +103,20 @@ const AboutPage = () => {
 
       {/* Certifications */}
       <div className="flex flex-wrap justify-center gap-3 pt-4">
-        <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
-          <Shield className="w-4 h-4" />
-          <span className="text-sm font-semibold">ISO 9001:2015</span>
+      
+      <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
+          <CheckCircle className="w-4 h-4" />
+          <span className="text-sm font-semibold">HTM 02-01</span>
         </div>
-
         <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
           <Award className="w-4 h-4" />
           <span className="text-sm font-semibold">CE Certified</span>
         </div>
 
-        <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
-          <CheckCircle className="w-4 h-4" />
-          <span className="text-sm font-semibold">HTM 02-01</span>
+  
+          <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-lg border border-white/40 text-white shadow-md">
+          <Shield className="w-4 h-4" />
+          <span className="text-sm font-semibold">ISO 9001:2015</span>
         </div>
       </div>
     </div>

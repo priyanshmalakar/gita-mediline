@@ -222,6 +222,8 @@ const HomePage = () => {
         </div>
       </section>
       <hr className="border-gray-300" />
+      
+      <OurClients />
       {/* Core Services Section - Premium Design */}
       <section className="section bg-white">
         <div className="container-custom">
@@ -360,7 +362,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      <OurClients />
       {/* Why Choose Us Section */}
       <section className="section bg-gradient-to-br from-[#005B77] to-[#44AB7E] text-white relative overflow-hidden">
         {/* Background Pattern */}

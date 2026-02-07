@@ -97,7 +97,7 @@ const Hero = () => {
               <div className="md:hidden inline-flex items-center gap-2 bg-gradient-to-r from-[#44AB7E] to-[#359163] backdrop-blur-sm px-4 py-2.5 rounded-full shadow-xl border border-white/30">
                 <Star className="w-4 h-4 md:w-5 md:h-5 text-white fill-white" />
                 <span className="text-xs md:text-sm font-bold text-white">
-                  Trusted Healthcare Infrastructure Partner
+                  Trusted & Certified Healthcare Partner
                 </span>
               </div>
 
@@ -120,19 +120,19 @@ const Hero = () => {
 
               {/* Certification Badges - Stacked on small mobile */}
               <div className="flex flex-col md:flex-row xs:flex-row gap-2 md:gap-3">
-                <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2.5 md:px-4 md:py-3 rounded-lg border border-white/20 shadow-lg">
+                <div className="flex w-1/2 items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2.5 md:px-4 md:py-3 rounded-lg border border-white/20 shadow-lg">
                   <Shield className="w-4 h-4 md:w-5 md:h-5 text-cyan-300 flex-shrink-0" />
                   <span className="text-xs md:text-sm font-medium text-white">
-                    HTM 02-01
+                  MGPS Certified Person
                   </span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2.5 md:px-4 md:py-3 rounded-lg border border-white/20 shadow-lg">
+                <div className="flex  w-1/2 items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2.5 md:px-4 md:py-3 rounded-lg border border-white/20 shadow-lg">
                   <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-300 flex-shrink-0" />
                   <span className="text-xs md:text-sm font-medium text-white">
                     ISO 9001:2015
                   </span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2.5 md:px-4 md:py-3 rounded-lg border border-white/20 shadow-lg">
+                <div className="flex w-1/2 items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2.5 md:px-4 md:py-3 rounded-lg border border-white/20 shadow-lg">
                   <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-300 flex-shrink-0" />
                   <span className="text-xs md:text-sm font-medium text-white">
                     CE Certified

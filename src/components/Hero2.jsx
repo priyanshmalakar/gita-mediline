@@ -146,7 +146,7 @@ const Hero = () => {
                 </div>
               </div> */}
               {/* Certification Badges - Enhanced Visibility */}
-              <div className="grid md:hidden grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid md:hidden grid-cols-3  gap-3">
                 <div className="flex items-center gap-2 bg-white/15 backdrop-blur-md px-3 py-2.5 md:px-4 md:py-3 rounded-lg border border-white/20 shadow-lg">
                   <div className="bg-white/20 p-2 rounded-lg">
                     <Shield className="w-5 h-5 md:w-6 md:h-6 text-blue-300 flex-shrink-0" />
