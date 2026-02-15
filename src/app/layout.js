@@ -45,6 +45,11 @@ export const metadata = {
     siteName: "Gita Mediline Services",
     type: "website",
   },
+   icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 
@@ -52,6 +57,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/favicon.png" sizes="any" />
+<link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -62,6 +69,7 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+3:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
