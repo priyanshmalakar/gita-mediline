@@ -17,48 +17,66 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Gita Mediline Services | MGPS & Modular OT Specialists",
+  title: "Modular OT & MGPS Installation in Indore | Gita Mediline Services",
 
   description:
-    "Gita Mediline Services provides MGPS supply, installation, testing, commissioning and maintenance along with Modular Operation Theatre solutions for hospitals. HTM compliant medical gas infrastructure specialists in Madhya Pradesh.",
+    "Gita Mediline Services is a leading provider of Modular Operation Theatre (OT) and Medical Gas Pipeline System (MGPS) installation in Indore, Madhya Pradesh. We provide hospital gas pipeline installation, MGPS maintenance, HTM compliant medical gas infrastructure, and modular OT setup for hospitals.",
 
   keywords: [
-    "MGPS installation",
-    "medical gas pipeline system",
-    "hospital gas pipeline",
-    "modular operation theatre",
-    "medical gas contractor",
-    "MGPS maintenance",
-    "hospital infrastructure services",
-    "HTM compliant MGPS",
-    "oxygen pipeline hospital",
-    "medical gas engineering"
+    "Modular OT Indore",
+    "MGPS installation Indore",
+    "Medical Gas Pipeline System Indore",
+    "Hospital gas pipeline installation",
+    "Modular operation theatre setup",
+    "MGPS contractor Madhya Pradesh",
+    "Medical gas pipeline contractor India",
+    "Hospital infrastructure services Indore",
+    "oxygen pipeline hospital installation",
+    "HTM compliant MGPS installation",
+    "Modular OT hospital Indore",
+    "medical gas engineering services",
   ],
 
   authors: [{ name: "Gita Mediline Services" }],
 
+  creator: "Gita Mediline Services",
+
+  publisher: "Gita Mediline Services",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  metadataBase: new URL("https://gitamediline.com"),
+
+  alternates: {
+    canonical: "https://gitamediline.com",
+  },
+
   openGraph: {
-    title: "MGPS & Modular OT Infrastructure Experts",
+    title: "Modular OT & MGPS Installation Experts | Gita Mediline Services",
     description:
-      "Certified hospital medical gas pipeline and modular OT solutions.",
+      "Hospital MGPS installation and Modular Operation Theatre solutions in Indore, Madhya Pradesh.",
     url: "https://gitamediline.com",
     siteName: "Gita Mediline Services",
+    locale: "en_IN",
     type: "website",
   },
-   icons: {
+
+  icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.png" sizes="any" />
-<link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -69,12 +87,37 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+3:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
-
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Gita Mediline Services",
+              image: "https://gitamediline.com/favicon.png",
+              url: "https://gitamediline.com",
+              telephone: "+917067534498",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Indore",
+                addressRegion: "Madhya Pradesh",
+                addressCountry: "India",
+              },
+              areaServed: "India",
+              serviceType: [
+                "Modular Operation Theatre Installation",
+                "Medical Gas Pipeline System Installation",
+                "MGPS Maintenance",
+                "Hospital Gas Pipeline System",
+              ],
+            }),
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          <ScreenProtection />
+        <ScreenProtection />
         <Toaster
           position="top-right"
           toastOptions={{
@@ -103,7 +146,7 @@ export default function RootLayout({ children }) {
         {/* <ServiceAvailabilityBar /> */}
         {children}
         <Footer />
-        <WhatsappIcon/>
+        <WhatsappIcon />
       </body>
     </html>
   );
